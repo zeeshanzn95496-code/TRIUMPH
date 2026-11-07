@@ -9,7 +9,7 @@ function Navbar() {
         <Bike size={32} />
 
         <h2>
-          MOTO<span>HUB</span>
+          <span>TRIUMPH</span>
         </h2>
       </div>
 
@@ -21,7 +21,7 @@ function Navbar() {
       </div>
 
       <div className="nav-actions">
-        <Search size={21} />
+        <Search size={30} />
 
         <button className="nav-btn">
           Explore Now
