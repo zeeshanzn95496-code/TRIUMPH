@@ -1,4 +1,3 @@
-
 .navbar {
   width: 100%;
   height: 85px;
@@ -6,31 +5,49 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #080a0b, #171b1e, #090b0d);
-  border-bottom: 1px solid #454b50;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: #0b0b0d;
+  border-bottom: 1px solid #26262b;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #d9e0e5;
+  color: #c9a962;
+  cursor: pointer;
 }
 
-.logo svg {
-  color: #a8ff00;
-  filter: drop-shadow(0 0 6px #a8ff00);
+.triumph-logo {
+  color: #c9a962;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover .triumph-logo {
+  color: #e6cf9a;
+  filter: drop-shadow(0 0 6px rgba(201, 169, 98, 0.45));
 }
 
 .logo h2 {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #8a744a, #e6cf9a, #8a744a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-shine 4s linear infinite;
 }
 
-.logo span {
-  color: #a8ff00;
+@keyframes gold-shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .nav-links {
@@ -40,57 +57,97 @@
 }
 
 .nav-links a {
-  color: #c0c6cb;
+  color: #a8a8ad;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
-  transition: 0.3s;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #8a744a, #e6cf9a, #8a744a);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ebeee6;
-  text-shadow: 0 0 10px #a8ff00;
+  color: #e8e6e1;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 25px;
-  color: #c0c6cb;
+  color: #a8a8ad;
 }
 
 .nav-actions svg {
   cursor: pointer;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-actions svg:hover {
-  color: #a8ff00;
+  color: #c9a962;
 }
 
 .nav-btn {
-  background: #a8ff00;
-  color: #080a0b;
-  border: 1px solid #a8ff00;
+  background: transparent;
+  color: #c9a962;
+  border: 1px solid #c9a962;
   padding: 12px 23px;
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
-  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+}
+
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(230, 207, 154, 0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
 }
 
 .nav-btn:hover {
-  background: transparent;
-  color: #a8ff00;
-  box-shadow: 0 0 15px rgba(168, 255, 0, 0.4);
+  color: #0b0b0d;
+  border-color: #e6cf9a;
+  background: #c9a962;
+}
+
+.nav-btn:hover::before {
+  left: 140%;
 }
 
 .mobile-menu {
   display: none;
-  color: #d9e0e5;
+  color: #e8e6e1;
 }
 
 @media (max-width: 768px) {
