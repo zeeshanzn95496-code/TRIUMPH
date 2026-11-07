@@ -5,50 +5,51 @@ import {
   Zap,
   Flame,
   Shield,
-  Star,
   X,
   Calendar,
   MapPin,
   Phone,
   Mail,
-  Clock,
   Sparkles,
   CheckCircle2,
-  ChevronRight,
+  ArrowUpRight,
   Volume2,
   VolumeX,
+  Compass,
+  Cpu,
+  Layers,
 } from "lucide-react";
 
-// Single Flagship Model Data: Triumph Rocket 3 GT
-const FLAGSHIP_MODEL = {
+// Single Flagship Model: Triumph Rocket 3 GT
+const FLAGSHIP = {
   name: "Triumph Rocket 3 GT",
-  edition: "Flagship Chrome & Carbon Edition",
-  price: "$24,495",
-  msrpNote: "Starting MSRP • Financing Available from 2.99% APR",
   tagline: "The World's Largest Production Motorcycle Engine",
-  overview:
-    "An engineering masterpiece without equal. Housing a monumental 2,458cc triple engine, the Rocket 3 GT unleashes 221 Nm of torque for peerless acceleration, complemented by supreme touring ergonomics and bespoke British craftsmanship.",
+  edition: "2025 Flagship Edition • Hinckley, UK",
+  price: "$24,495",
+  msrpNote: "MSRP Starting from • Flexible Financing from 2.99% APR",
+  description:
+    "An engineering icon with monumental road presence. Powered by a record-breaking 2,458cc triple engine, the Rocket 3 GT delivers unprecedented torque, peerless cruising acceleration, and bespoke British craftsmanship.",
   colors: [
     {
       name: "Phantom Black & Granite",
-      hex: "#151515",
-      accent: "#c9a962",
+      hex: "#161618",
+      borderHex: "#44464f",
       image:
-        "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=85",
+        "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1800&q=85",
     },
     {
-      name: "Silver Ice & Cranberry Red",
+      name: "Carnival Red & Sapphire",
       hex: "#991b1b",
-      accent: "#e11d48",
+      borderHex: "#ef4444",
       image:
-        "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1600&q=85",
+        "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1800&q=85",
     },
     {
-      name: "Sapphire Metallic & Aluminum",
-      hex: "#1e3a8a",
-      accent: "#38bdf8",
+      name: "Silver Ice & Aluminum",
+      hex: "#4b5563",
+      borderHex: "#9ca3af",
       image:
-        "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1600&q=85",
+        "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85",
     },
   ],
   specs: [
@@ -59,7 +60,7 @@ const FLAGSHIP_MODEL = {
       icon: Gauge,
     },
     {
-      label: "Peak Power",
+      label: "Max Power",
       value: "165 HP",
       detail: "@ 6,000 RPM",
       icon: Zap,
@@ -77,38 +78,78 @@ const FLAGSHIP_MODEL = {
       icon: Shield,
     },
   ],
-  engineeringPoints: [
+  pillars: [
     {
-      title: "Monstrous 2.5L Triple Engine",
-      description:
-        "Featuring the world's largest engine on a production motorcycle, delivering unmatched rolling acceleration with an unmistakable deep triple roar.",
+      icon: Compass,
+      title: "2.5L High-Output Triple",
+      desc: "Massive low-end grunt combined with a soaring top end, delivering a spine-tingling acoustic soundtrack.",
     },
     {
-      title: "Brembo Stylema® Monobloc Calipers",
-      description:
-        "Cutting-edge superbike braking package with twin 320mm discs, optimized cornering ABS, and integrated traction control system.",
+      icon: Shield,
+      title: "Brembo Stylema® Brakes",
+      desc: "Top-tier monobloc superbike calipers with twin 320mm discs for instant, effortless stopping power.",
     },
     {
-      title: "High-Spec Adjustable Showa Suspension",
-      description:
-        "47mm inverted Showa front cartridge forks and a fully adjustable Showa piggyback reservoir rear monoshock for supreme ride plushness.",
+      icon: Layers,
+      title: "Showa Fully-Adjustable",
+      desc: "47mm inverted Showa cartridge front forks and piggyback reservoir rear monoshock tuned for plush touring.",
     },
     {
-      title: "Next-Gen TFT Instrumentation",
-      description:
-        "Full-colour display offering personalized rider themes, Bluetooth phone connectivity, turn-by-turn navigation, and GoPro controls.",
+      icon: Cpu,
+      title: "Optimized Cornering ABS",
+      desc: "State-of-the-art Inertial Measurement Unit (IMU) continuously optimizes braking and traction control.",
     },
+  ],
+  detailedSpecs: [
+    {
+      category: "Engine & Transmission",
+      items: [
+        { label: "Type", val: "Liquid-cooled, 12 valve, DOHC, inline 3-cylinder" },
+        { label: "Capacity", val: "2,458 cc" },
+        { label: "Bore x Stroke", val: "110.2 mm x 85.9 mm" },
+        { label: "Compression", val: "10.8:1" },
+        { label: "Exhaust", val: "Stainless 3-into-1 headers with arrow silencers" },
+        { label: "Final Drive", val: "Shaft drive with bevel box" },
+        { label: "Clutch", val: "Wet, multi-plate torque assist, hydraulic" },
+        { label: "Gearbox", val: "6-speed helical gear train" },
+      ],
+    },
+    {
+      category: "Chassis & Dimensions",
+      items: [
+        { label: "Frame", val: "Full aluminium spine structure" },
+        { label: "Front Wheel", val: "Cast aluminium 17 x 3.5 in" },
+        { label: "Rear Wheel", val: "Cast aluminium 16 x 7.5 in" },
+        { label: "Front Suspension", val: "Showa 47mm upside-down 1-way adjustable" },
+        { label: "Rear Suspension", val: "Fully adjustable Showa piggyback monoshock" },
+        { label: "Fuel Capacity", val: "18.0 Litres (4.75 US gal)" },
+        { label: "Seat Height", val: "750 mm (29.5 in)" },
+        { label: "Dry Weight", val: "291 kg (optimized mass centralization)" },
+      ],
+    },
+  ],
+  equipment: [
+    "Full-colour 2nd Generation TFT Instrument Display",
+    "4 Selectable Riding Modes: Road, Rain, Sport, Rider-Configurable",
+    "Triumph Shift Assist (Up & Down Quickshifter)",
+    "Hill Hold Control with automatic gradient detection",
+    "One-touch Electronic Cruise Control",
+    "Keyless Ignition & Electronic Steering Lock",
+    "All-LED Headlights with Signature Daytime Running Light (DRL)",
+    "Heated Grips with 2 selectable warmth levels",
+    "Under-seat USB charging socket with phone compartment",
+    "Sculpted two-piece touring saddle with brushed alloy backrest",
   ],
 };
 
 function App() {
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState("specs");
   const [isTestRideModalOpen, setIsTestRideModalOpen] = useState(false);
   const [testRideBooked, setTestRideBooked] = useState(false);
-  const [activeTab, setActiveTab] = useState("specs");
-  const [isPlayingSound, setIsPlayingSound] = useState(false);
+  const [soundActive, setSoundActive] = useState(false);
 
-  const currentColor = FLAGSHIP_MODEL.colors[selectedColorIndex];
+  const currentColor = FLAGSHIP.colors[selectedColorIndex];
 
   const handleTestRideSubmit = (e) => {
     e.preventDefault();
@@ -116,204 +157,232 @@ function App() {
     setTimeout(() => {
       setTestRideBooked(false);
       setIsTestRideModalOpen(false);
-    }, 2800);
-  };
-
-  const toggleSound = () => {
-    setIsPlayingSound(!isPlayingSound);
+    }, 2600);
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0b0d] text-[#e8e6e1] selection:bg-[#c9a962] selection:text-[#0b0b0d]">
-      {/* 1. Top Premium Navbar with Home, Explore, Models, Contact */}
+    <div className="min-h-screen bg-[#07080a] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black">
+      {/* 1. Global Fixed Premium Navbar */}
       <Navbar onOpenTestRide={() => setIsTestRideModalOpen(true)} />
 
-      {/* 2. Hero Section - Flagship Single Model Reveal */}
-      <header id="home" className="relative min-h-[92vh] flex items-center justify-center px-6 sm:px-12 overflow-hidden border-b border-[#22242a]">
-        {/* Ambient Warm Golden Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-[#c9a962]/12 rounded-full blur-[150px] pointer-events-none" />
+      {/* 2. Hero Section - Single Model Showcase */}
+      <section
+        id="home"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
+      >
+        {/* Subtle Ambient Radial Lighting */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] md:w-[900px] h-[300px] sm:h-[450px] bg-red-600/[0.04] sm:bg-white/[0.03] rounded-full blur-[100px] sm:blur-[160px] pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto w-full py-12 z-10">
-          {/* Top Pill & Badges */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#c9a962]/40 bg-[#c9a962]/10 text-[#e6cf9a] text-[11px] font-bold tracking-widest uppercase">
-              <Sparkles size={13} className="text-[#c9a962]" />
-              {FLAGSHIP_MODEL.edition}
-            </div>
-
-            <span className="text-xs font-semibold text-[#8b8e96] tracking-wider uppercase">
-              Handcrafted in Hinckley, UK
-            </span>
+        {/* Top Heritage Badge */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-[11px] font-semibold tracking-[0.2em] uppercase text-zinc-300 w-fit">
+            <Sparkles size={12} className="text-zinc-200" />
+            {FLAGSHIP.edition}
           </div>
 
-          {/* Model Title */}
-          <div className="text-center md:text-left mb-6">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tight leading-none">
-              ROCKET 3 <span className="gold-gradient-text">GT</span>
-            </h1>
-            <p className="text-sm sm:text-base text-[#c9a962] font-semibold tracking-widest uppercase mt-2">
-              {FLAGSHIP_MODEL.tagline}
-            </p>
-          </div>
-
-          {/* Featured Hero Bike Image Showcase */}
-          <div className="relative w-full h-[400px] sm:h-[520px] rounded-2xl overflow-hidden border border-[#262831] bg-[#101115] shadow-[0_20px_50px_rgba(0,0,0,0.85)] group">
-            <img
-              src={currentColor.image}
-              alt={FLAGSHIP_MODEL.name}
-              className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-102"
-            />
-            {/* Dark Vignette Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-transparent to-black/30" />
-
-            {/* Price Badge on Image */}
-            <div className="absolute top-6 right-6 bg-black/80 backdrop-blur-md px-5 py-2.5 rounded-lg border border-[#c9a962]/40 text-right">
-              <span className="text-[10px] uppercase tracking-widest text-[#8b8e96] block">Starting At</span>
-              <span className="text-2xl font-black text-white">{FLAGSHIP_MODEL.price}</span>
-            </div>
-
-            {/* Audio Engine Sim Sound Button */}
-            <button
-              onClick={toggleSound}
-              className="absolute top-6 left-6 inline-flex items-center gap-2 bg-black/80 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 text-xs font-semibold text-[#e8e6e1] hover:text-[#c9a962] hover:border-[#c9a962]/50 transition-colors cursor-pointer"
-            >
-              {isPlayingSound ? <Volume2 size={16} className="text-[#c9a962] animate-pulse" /> : <VolumeX size={16} />}
-              <span>{isPlayingSound ? "Engine Audio Active" : "Hear 2.5L Exhaust"}</span>
-            </button>
-
-            {/* Interactive Color Switcher Bar */}
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#0e0f13]/85 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10">
-              <div className="flex items-center gap-3">
-                <span className="text-xs uppercase tracking-wider text-[#8b8e96] font-bold">
-                  Colorway:
-                </span>
-                <span className="text-xs font-semibold text-white">
-                  {currentColor.name}
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                {FLAGSHIP_MODEL.colors.map((color, idx) => (
-                  <button
-                    key={color.name}
-                    onClick={() => setSelectedColorIndex(idx)}
-                    className={`w-7 h-7 rounded-full border-2 transition-transform cursor-pointer ${
-                      selectedColorIndex === idx
-                        ? "scale-125 border-[#c9a962] shadow-[0_0_12px_rgba(201,169,98,0.7)]"
-                        : "border-[#40434b] hover:border-white opacity-70"
-                    }`}
-                    style={{ backgroundColor: color.hex }}
-                    title={color.name}
-                  />
-                ))}
-              </div>
-
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setIsTestRideModalOpen(true)}
-                  className="px-6 py-2.5 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_rgba(201,169,98,0.4)]"
-                >
-                  Book Test Ride
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Specs Ribbon */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            {FLAGSHIP_MODEL.specs.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.label}
-                  className="bg-[#121317] border border-[#22242a] p-5 rounded-xl flex items-center gap-4 hover:border-[#c9a962]/40 transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center text-[#c9a962] shrink-0">
-                    <Icon size={22} />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-[#81848a] uppercase tracking-wider block">
-                      {item.label}
-                    </span>
-                    <span className="text-2xl font-black text-white block leading-tight">
-                      {item.value}
-                    </span>
-                    <span className="text-[11px] text-[#a0a3aa]">
-                      {item.detail}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-zinc-500">
+            Handcrafted in England
+          </span>
         </div>
-      </header>
 
-      {/* 3. Explore Section - Deep Dive Engineering */}
-      <section id="explore" className="py-24 px-6 sm:px-12 max-w-7xl mx-auto border-b border-[#22242a]">
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#c9a962] uppercase tracking-widest mb-2">
-            <Shield size={14} />
-            Pure British Craftsmanship
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold uppercase tracking-tight">
-            Explore Engineering
-          </h2>
-          <p className="text-sm sm:text-base text-[#9da0a6] mt-4 leading-relaxed">
-            {FLAGSHIP_MODEL.overview}
+        {/* Title Header */}
+        <div className="mb-6 sm:mb-8 text-left">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight uppercase leading-none text-white">
+            ROCKET 3 <span className="text-zinc-400 font-light">GT</span>
+          </h1>
+          <p className="text-xs sm:text-sm md:text-base font-medium tracking-[0.16em] uppercase text-zinc-400 mt-2 sm:mt-3">
+            {FLAGSHIP.tagline}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {FLAGSHIP_MODEL.engineeringPoints.map((point, index) => (
-            <div
-              key={point.title}
-              className="p-8 rounded-xl bg-[#121317] border border-[#22242b] hover:border-[#c9a962]/40 transition-all hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-            >
-              <div className="text-xs font-extrabold text-[#c9a962] uppercase tracking-widest mb-3">
-                Phase 0{index + 1}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                {point.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-[#9da0a6] leading-relaxed">
-                {point.description}
-              </p>
+        {/* Motorcycle Cinematic Showcase */}
+        <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.08] bg-[#0d0e13] shadow-[0_25px_60px_rgba(0,0,0,0.9)]">
+          {/* Main Visual Image */}
+          <div className="relative h-[250px] sm:h-[380px] md:h-[480px] lg:h-[540px] w-full overflow-hidden bg-zinc-950">
+            <img
+              src={currentColor.image}
+              alt={FLAGSHIP.name}
+              className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
+            />
+            {/* Smooth Top & Bottom Vignettes */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e13] via-transparent to-black/30 pointer-events-none" />
+
+            {/* Floating Price Tag */}
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-black/80 backdrop-blur-md px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-lg border border-white/10 text-right">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 block">
+                MSRP From
+              </span>
+              <span className="text-lg sm:text-2xl font-black text-white leading-tight">
+                {FLAGSHIP.price}
+              </span>
             </div>
-          ))}
+
+            {/* Exhaust Audio Sim */}
+            <button
+              onClick={() => setSoundActive(!soundActive)}
+              className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg border border-white/10 text-[11px] font-semibold text-zinc-300 hover:text-white transition-colors cursor-pointer"
+            >
+              {soundActive ? (
+                <Volume2 size={15} className="text-red-500 animate-pulse" />
+              ) : (
+                <VolumeX size={15} />
+              )}
+              <span className="hidden sm:inline">
+                {soundActive ? "2.5L Exhaust Active" : "Simulate Exhaust Audio"}
+              </span>
+            </button>
+          </div>
+
+          {/* Color Switcher Strip (Responsive & Touch-Friendly) */}
+          <div className="bg-[#0b0c10] border-t border-white/[0.06] p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
+              <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-zinc-400">
+                Colorway:
+              </span>
+              <span className="text-xs sm:text-sm font-semibold text-white">
+                {currentColor.name}
+              </span>
+            </div>
+
+            {/* Color Swatch Circles */}
+            <div className="flex items-center gap-3">
+              {FLAGSHIP.colors.map((color, idx) => (
+                <button
+                  key={color.name}
+                  onClick={() => setSelectedColorIndex(idx)}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full transition-all duration-200 cursor-pointer flex items-center justify-center ${
+                    selectedColorIndex === idx
+                      ? "ring-2 ring-white scale-110 shadow-lg"
+                      : "opacity-60 hover:opacity-100 ring-1 ring-white/20"
+                  }`}
+                  style={{ backgroundColor: color.hex }}
+                  title={color.name}
+                  aria-label={color.name}
+                >
+                  {selectedColorIndex === idx && (
+                    <div className="w-2 h-2 rounded-full bg-white" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Action Button */}
+            <div className="w-full md:w-auto flex items-center gap-3">
+              <button
+                onClick={() => setIsTestRideModalOpen(true)}
+                className="w-full md:w-auto px-6 py-2.5 rounded-full bg-white text-black font-extrabold text-xs tracking-[0.16em] uppercase hover:bg-zinc-200 transition-colors shadow-lg cursor-pointer"
+              >
+                Book Test Ride
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* 4 Core Performance Metrics Ribbon */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
+          {FLAGSHIP.specs.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.label}
+                className="bg-[#0e0f14] border border-white/[0.06] hover:border-white/20 rounded-xl p-4 sm:p-5 transition-colors"
+              >
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-zinc-300 mb-3">
+                  <Icon size={18} />
+                </div>
+                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-zinc-400 block mb-1">
+                  {item.label}
+                </span>
+                <span className="text-xl sm:text-2xl font-black text-white tracking-tight block">
+                  {item.value}
+                </span>
+                <span className="text-[11px] text-zinc-400 block mt-0.5">
+                  {item.detail}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* 4. Models Section - Full Specs & Features of the Rocket 3 GT */}
-      <section id="model" className="py-24 px-6 sm:px-12 max-w-7xl mx-auto border-b border-[#22242a]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      {/* 3. Explore Section - Engineering Breakdown */}
+      <section
+        id="explore"
+        className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.06]"
+      >
+        <div className="max-w-3xl mb-10 sm:mb-14">
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-2">
+            Engineering Superiority
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+            Built Without Compromise
+          </h2>
+          <p className="text-xs sm:text-sm md:text-base text-zinc-400 mt-4 leading-relaxed">
+            {FLAGSHIP.description}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {FLAGSHIP.pillars.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
+              <div
+                key={pillar.title}
+                className="p-6 sm:p-7 rounded-2xl bg-[#0e0f14] border border-white/[0.06] hover:border-white/25 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white mb-5">
+                    <Icon size={20} />
+                  </div>
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-2">
+                    0{i + 1} // Precision
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    {pillar.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 4. Models Section - Full Specs & Features */}
+      <section
+        id="models"
+        className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.06]"
+      >
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div>
-            <span className="text-xs font-bold text-[#c9a962] uppercase tracking-widest">
-              Flagship Spec Sheet
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-1">
+              Technical Blueprint
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight mt-1">
-              Rocket 3 GT Specifications
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+              Rocket 3 GT Anatomy
             </h2>
           </div>
 
-          {/* Navigation Pill tabs */}
-          <div className="flex items-center gap-2 bg-[#141519] p-1.5 rounded-lg border border-[#2b2d35]">
+          {/* Interactive Tab Switcher */}
+          <div className="inline-flex p-1 rounded-xl bg-white/[0.04] border border-white/10 self-start md:self-auto">
             <button
               onClick={() => setActiveTab("specs")}
-              className={`px-5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-4 sm:px-6 py-2 rounded-lg text-xs font-bold tracking-[0.14em] uppercase transition-all cursor-pointer ${
                 activeTab === "specs"
-                  ? "bg-[#c9a962] text-[#0b0b0d]"
-                  : "text-[#9da0a6] hover:text-white"
+                  ? "bg-white text-black shadow"
+                  : "text-zinc-400 hover:text-white"
               }`}
             >
-              Technical Specs
+              Specifications
             </button>
             <button
               onClick={() => setActiveTab("equipment")}
-              className={`px-5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+              className={`px-4 sm:px-6 py-2 rounded-lg text-xs font-bold tracking-[0.14em] uppercase transition-all cursor-pointer ${
                 activeTab === "equipment"
-                  ? "bg-[#c9a962] text-[#0b0b0d]"
-                  : "text-[#9da0a6] hover:text-white"
+                  ? "bg-white text-black shadow"
+                  : "text-zinc-400 hover:text-white"
               }`}
             >
               Standard Tech
@@ -321,62 +390,45 @@ function App() {
           </div>
         </div>
 
-        {activeTab === "specs" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Engine Architecture</span>
-              <p className="text-lg font-bold text-white mt-1">Inline 3-Cylinder, Liquid-Cooled</p>
-              <p className="text-xs text-[#81848a] mt-2">DOHC, 4 valves per cylinder with ride-by-wire fuel injection.</p>
-            </div>
-
-            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Final Drive & Gearbox</span>
-              <p className="text-lg font-bold text-white mt-1">6-Speed with Shaft Drive</p>
-              <p className="text-xs text-[#81848a] mt-2">Maintenance-free shaft drive housed in a sculpted single-sided swingarm.</p>
-            </div>
-
-            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Chassis & Frame</span>
-              <p className="text-lg font-bold text-white mt-1">Full Aluminium Spine</p>
-              <p className="text-xs text-[#81848a] mt-2">Mass-optimized cast aluminium frame using the engine as a stressed member.</p>
-            </div>
-
-            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Fuel Capacity</span>
-              <p className="text-lg font-bold text-white mt-1">18.0 Litres (4.75 US gal)</p>
-              <p className="text-xs text-[#81848a] mt-2">Sculpted alloy tank with iconic brushed stainless steel Monroe strap.</p>
-            </div>
-
-            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Seat Height</span>
-              <p className="text-lg font-bold text-white mt-1">750 mm (29.5 in)</p>
-              <p className="text-xs text-[#81848a] mt-2">Sculpted touring saddle with adjustable pillion backrest.</p>
-            </div>
-
-            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Dry / Wet Weight</span>
-              <p className="text-lg font-bold text-white mt-1">294 kg Wet (40 kg lighter)</p>
-              <p className="text-xs text-[#81848a] mt-2">Revolutionary mass centralization for nimble cruiser agility.</p>
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              "Optimized Cornering ABS & Traction Control with IMU support",
-              "Four Selectable Riding Modes: Road, Rain, Sport, Rider-Configurable",
-              "All-LED Lighting with Signature Daytime Running Light (DRL)",
-              "Hill Hold Control with automatic rear brake pressure",
-              "Electronic Cruise Control with one-button activation",
-              "Keyless Ignition, Steering Lock, and Fuel Filler Cap",
-              "Under-Seat USB Power Socket with dedicated smartphone compartment",
-              "Triumph Shift Assist (Bi-Directional Quickshifter) available",
-            ].map((feature, i) => (
+        {/* Tab 1: Technical Specs */}
+        {activeTab === "specs" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {FLAGSHIP.detailedSpecs.map((group) => (
               <div
-                key={i}
-                className="flex items-center gap-3 p-4 bg-[#121317] rounded-lg border border-[#202228] text-xs sm:text-sm text-[#e0e3e9]"
+                key={group.category}
+                className="bg-[#0e0f14] rounded-2xl border border-white/[0.06] p-6 sm:p-8"
               >
-                <CheckCircle2 size={16} className="text-[#c9a962] shrink-0" />
-                <span>{feature}</span>
+                <h3 className="text-sm font-bold tracking-[0.18em] uppercase text-zinc-300 pb-4 mb-4 border-b border-white/[0.08]">
+                  {group.category}
+                </h3>
+                <div className="divide-y divide-white/[0.04]">
+                  {group.items.map((item) => (
+                    <div
+                      key={item.label}
+                      className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs sm:text-sm"
+                    >
+                      <span className="text-zinc-400 font-medium">{item.label}</span>
+                      <span className="text-white font-semibold sm:text-right">
+                        {item.val}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Tab 2: Standard Equipment */}
+        {activeTab === "equipment" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {FLAGSHIP.equipment.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 p-4 sm:p-5 rounded-xl bg-[#0e0f14] border border-white/[0.06] text-xs sm:text-sm text-zinc-200"
+              >
+                <CheckCircle2 size={16} className="text-white shrink-0" />
+                <span>{item}</span>
               </div>
             ))}
           </div>
@@ -384,71 +436,84 @@ function App() {
       </section>
 
       {/* 5. Contact Section - Official Showroom Portal */}
-      <footer id="contact" className="py-20 px-6 sm:px-12 max-w-7xl mx-auto text-xs text-[#8b8e96]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 pb-16 border-b border-[#202228]">
+      <footer
+        id="contact"
+        className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08] text-xs text-zinc-400"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-14 mb-16 pb-12 border-b border-white/[0.06]">
+          {/* Column 1: Showroom Info */}
           <div>
-            <div className="text-white font-black text-xl tracking-widest mb-3">
-              <span className="gold-gradient-text">TRIUMPH</span> SHOWROOM
+            <div className="text-white font-black text-xl tracking-[0.2em] mb-3">
+              TRIUMPH MOTORCYCLES
             </div>
-            <p className="text-xs text-[#9da0a6] leading-relaxed mb-6">
-              Experience the pinnacle of motorcycle engineering. Schedule your one-on-one VIP showroom consultation or private track test ride.
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              Experience the unmatched force of British motorcycling. Book an exclusive private appointment or track session with our product specialists.
             </p>
             <button
               onClick={() => setIsTestRideModalOpen(true)}
-              className="px-6 py-3 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer"
+              className="px-6 py-2.5 rounded-full border border-white/20 bg-white/[0.04] hover:bg-white text-zinc-200 hover:text-black font-bold text-xs tracking-[0.14em] uppercase transition-all cursor-pointer"
             >
-              Request Test Ride
+              Request Consultation
             </button>
           </div>
 
+          {/* Column 2: Direct Contacts */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
-              Direct Contact
+            <h4 className="text-xs font-bold text-white tracking-[0.18em] uppercase mb-4">
+              Direct Inquiries
             </h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-white">
-                <Phone size={15} className="text-[#c9a962]" />
-                <span>+1 (800) 555-TRIUMPH (874-8674)</span>
-              </div>
-              <div className="flex items-center gap-3 text-white">
-                <Mail size={15} className="text-[#c9a962]" />
-                <span>concierge@triumph-showroom.com</span>
-              </div>
-              <div className="flex items-center gap-3 text-white">
-                <MapPin size={15} className="text-[#c9a962]" />
-                <span>Hinckley Flagship Experience Center</span>
+            <div className="space-y-3.5">
+              <a
+                href="tel:18005558748"
+                className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors"
+              >
+                <Phone size={15} className="text-zinc-400" />
+                <span>1-800-555-TRIUMPH (874-8674)</span>
+              </a>
+              <a
+                href="mailto:concierge@triumph-experience.com"
+                className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors"
+              >
+                <Mail size={15} className="text-zinc-400" />
+                <span>concierge@triumph-experience.com</span>
+              </a>
+              <div className="flex items-center gap-3 text-zinc-300">
+                <MapPin size={15} className="text-zinc-400 shrink-0" />
+                <span>Hinckley Flagship Experience Center, UK</span>
               </div>
             </div>
           </div>
 
+          {/* Column 3: Hours */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-white tracking-[0.18em] uppercase mb-4">
               Showroom Hours
             </h4>
-            <div className="space-y-2">
-              <div className="flex justify-between border-b border-[#1c1d22] pb-1.5">
-                <span>Monday - Friday</span>
-                <span className="text-white font-semibold">9:00 AM - 8:00 PM</span>
+            <div className="space-y-2.5">
+              <div className="flex justify-between pb-1.5 border-b border-white/[0.04]">
+                <span>Monday – Friday</span>
+                <span className="text-white font-semibold">09:00 – 19:00</span>
               </div>
-              <div className="flex justify-between border-b border-[#1c1d22] pb-1.5">
+              <div className="flex justify-between pb-1.5 border-b border-white/[0.04]">
                 <span>Saturday</span>
-                <span className="text-white font-semibold">9:00 AM - 6:00 PM</span>
+                <span className="text-white font-semibold">09:00 – 18:00</span>
               </div>
               <div className="flex justify-between">
                 <span>Sunday</span>
-                <span className="text-[#c9a962] font-semibold">By VIP Appointment</span>
+                <span className="text-zinc-300 font-semibold">VIP Appointment Only</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6b6e76]">
-          <p>© {new Date().getFullYear()} Triumph Motorcycles Showroom. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#home" className="hover:text-white">Home</a>
-            <a href="#explore" className="hover:text-white">Explore</a>
-            <a href="#model" className="hover:text-white">Models</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
+        {/* Bottom Legal / Nav */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
+          <p>© {new Date().getFullYear()} Triumph Motorcycles. All Rights Reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#home" className="hover:text-white transition-colors">Home</a>
+            <a href="#explore" className="hover:text-white transition-colors">Explore</a>
+            <a href="#models" className="hover:text-white transition-colors">Models</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
       </footer>
@@ -456,89 +521,93 @@ function App() {
       {/* 6. VIP Test Ride Booking Modal */}
       {isTestRideModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#141519] border border-[#30323a] rounded-xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+          <div className="bg-[#101117] border border-white/10 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => {
                 setIsTestRideModalOpen(false);
                 setTestRideBooked(false);
               }}
-              className="absolute top-4 right-4 text-[#81848a] hover:text-white cursor-pointer"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-zinc-400 hover:text-white cursor-pointer"
+              aria-label="Close modal"
             >
               <X size={20} />
             </button>
 
             {testRideBooked ? (
               <div className="text-center py-8">
-                <CheckCircle2 size={54} className="text-[#52c41a] mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Test Ride Scheduled!</h3>
-                <p className="text-xs text-[#9da0a6] leading-relaxed">
-                  Our VIP Concierge will contact you shortly to confirm your private track session for the{" "}
-                  <strong className="text-white">{FLAGSHIP_MODEL.name}</strong>.
+                <CheckCircle2 size={50} className="text-emerald-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-black text-white mb-2">
+                  Session Confirmed
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  Our showroom manager will contact you within 2 business hours to finalize your private test ride for the{" "}
+                  <strong className="text-white">{FLAGSHIP.name}</strong>.
                 </p>
               </div>
             ) : (
               <div>
-                <span className="text-xs font-bold text-[#c9a962] uppercase tracking-wider">
-                  Official Showroom Concierge
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-1">
+                  Exclusive Invitation
                 </span>
-                <h3 className="text-2xl font-black text-white mt-1 mb-1">
+                <h3 className="text-2xl font-black text-white mb-1">
                   Schedule A VIP Test Ride
                 </h3>
-                <p className="text-xs text-[#81848a] mb-6">
-                  Selected Model: <strong className="text-[#c9a962]">{FLAGSHIP_MODEL.name}</strong> ({currentColor.name})
+                <p className="text-xs text-zinc-400 mb-6">
+                  Selected Model: <strong className="text-white">{FLAGSHIP.name}</strong> ({currentColor.name})
                 </p>
 
                 <form onSubmit={handleTestRideSubmit} className="space-y-4">
                   <div>
-                    <label className="text-[11px] uppercase tracking-wider text-[#9da0a6] block mb-1">
+                    <label className="text-[10px] uppercase tracking-wider text-zinc-400 block mb-1">
                       Full Name
                     </label>
                     <input
                       type="text"
                       required
                       placeholder="Alex Morgan"
-                      className="w-full bg-[#0d0e11] border border-[#262830] rounded px-3.5 py-2.5 text-sm text-white placeholder-[#555861] focus:outline-none focus:border-[#c9a962]"
+                      className="w-full bg-[#090a0d] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-[11px] uppercase tracking-wider text-[#9da0a6] block mb-1">
+                      <label className="text-[10px] uppercase tracking-wider text-zinc-400 block mb-1">
                         Phone Number
                       </label>
                       <input
                         type="tel"
                         required
                         placeholder="+1 (555) 000-0000"
-                        className="w-full bg-[#0d0e11] border border-[#262830] rounded px-3.5 py-2.5 text-sm text-white placeholder-[#555861] focus:outline-none focus:border-[#c9a962]"
+                        className="w-full bg-[#090a0d] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="text-[11px] uppercase tracking-wider text-[#9da0a6] block mb-1">
+                      <label className="text-[10px] uppercase tracking-wider text-zinc-400 block mb-1">
                         Preferred Date
                       </label>
                       <input
                         type="date"
                         required
-                        className="w-full bg-[#0d0e11] border border-[#262830] rounded px-3.5 py-2.5 text-sm text-white placeholder-[#555861] focus:outline-none focus:border-[#c9a962]"
+                        className="w-full bg-[#090a0d] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-[11px] uppercase tracking-wider text-[#9da0a6] block mb-1">
-                      Nearest Dealer Location
+                    <label className="text-[10px] uppercase tracking-wider text-zinc-400 block mb-1">
+                      Dealership Location
                     </label>
-                    <select className="w-full bg-[#0d0e11] border border-[#262830] rounded px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#c9a962]">
-                      <option>Hinckley Flagship Experience Center</option>
-                      <option>Downtown Triumph Hub</option>
-                      <option>West Coast Triumph Pavilion</option>
+                    <select className="w-full bg-[#090a0d] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-white transition-colors">
+                      <option>Hinckley Flagship Experience Center (UK)</option>
+                      <option>London Mayfair Triumph Studio</option>
+                      <option>New York Metro Pavilion</option>
+                      <option>Los Angeles Flagship Hub</option>
                     </select>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 mt-2 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] font-bold text-xs uppercase tracking-wider rounded cursor-pointer transition-colors"
+                    className="w-full py-3 mt-2 rounded-lg bg-white text-black font-extrabold text-xs tracking-[0.16em] uppercase hover:bg-zinc-200 transition-colors shadow-lg cursor-pointer"
                   >
                     Confirm VIP Reservation
                   </button>
