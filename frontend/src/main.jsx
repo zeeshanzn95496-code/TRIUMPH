@@ -21,21 +21,13 @@ function Root() {
     };
     rafId = requestAnimationFrame(raf);
 
-    const navbar = navRef.current?.querySelector(".navbar");
+    const navbar = navRef.current?.querySelector("nav");
     if (navbar) {
       gsap.from(navbar, {
         y: -80,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
-      });
-      gsap.from(navbar.querySelectorAll(".nav-links a"), {
-        y: -15,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.08,
-        delay: 0.3,
-        ease: "power2.out",
       });
     }
 
