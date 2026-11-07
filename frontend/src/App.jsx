@@ -10,498 +10,456 @@ import {
   Calendar,
   MapPin,
   Phone,
-  ArrowUpRight,
+  Mail,
+  Clock,
   Sparkles,
-  SlidersHorizontal,
   CheckCircle2,
+  ChevronRight,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
-const BIKES = [
-  {
-    id: "rocket-3-gt",
-    name: "Triumph Rocket 3 GT",
-    tagline: "The Ultimate Muscle Roadster",
-    category: "Rocket",
-    price: "$24,495",
-    engine: "2,458 cc Triple",
-    power: "165 HP @ 6,000 rpm",
-    torque: "221 Nm @ 4,000 rpm",
-    weight: "294 kg",
-    topSpeed: "235 km/h",
-    accent: "#c9a962",
-    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Equipped with the world's largest production motorcycle engine, delivering unmatched acceleration, muscular presence, and supreme touring comfort.",
-    features: ["Brembo Stylema Brakes", "Showa Adjustable Suspension", "4 Riding Modes", "Cornering ABS & Traction"],
-  },
-  {
-    id: "street-triple-765-rs",
-    name: "Street Triple 765 RS",
-    tagline: "Moto2™ Derived Precision",
-    category: "Roadster",
-    price: "$12,795",
-    engine: "765 cc Triple",
-    power: "128 HP @ 12,000 rpm",
-    torque: "80 Nm @ 9,500 rpm",
-    weight: "188 kg",
-    topSpeed: "250 km/h",
-    accent: "#ff4d4f",
-    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "The definitive street fighter. Powered by Moto2™ race engine evolution, offering lightning throttle response and razor-sharp handling.",
-    features: ["Öhlins STX40 Rear Shock", "Brembo Stylema Calipers", "Track Lap Timer", "Triumph Shift Assist"],
-  },
-  {
-    id: "bonneville-bobber",
-    name: "Bonneville Bobber",
-    tagline: "Pure Stripped-Back Attitude",
-    category: "Modern Classic",
-    price: "$13,995",
-    engine: "1,200 cc High Torque Twin",
-    power: "77 HP @ 6,100 rpm",
-    torque: "106 Nm @ 4,000 rpm",
-    weight: "251 kg",
-    topSpeed: "190 km/h",
-    accent: "#e6cf9a",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Iconic custom silhouette, floating aluminum single seat, and torque-rich 1200cc engine delivering an authentic hot-rod roar.",
-    features: ["Adjustable Floating Seat", "Twin Brembo Front Discs", "Show-stopping Hardtail Look", "Torque Assist Clutch"],
-  },
-  {
-    id: "tiger-900-rally-pro",
-    name: "Tiger 900 Rally Pro",
-    tagline: "Go Anywhere Adventure",
-    category: "Adventure",
-    price: "$17,395",
-    engine: "888 cc T-Plane Triple",
-    power: "106 HP @ 9,500 rpm",
-    torque: "90 Nm @ 6,850 rpm",
-    weight: "228 kg",
-    topSpeed: "205 km/h",
-    accent: "#52c41a",
-    image: "https://images.unsplash.com/photo-1558980664-769d59546b3d?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Built to conquer off-road trails and cross continents with effortless ease. The innovative T-Plane crank delivers bottom-end tractor tractability.",
-    features: ["Showa 240mm Travel Off-Road Suspension", "Spoke Tubeless Wheels", "Heated Seats & Grips", "6 Riding Modes"],
-  },
-  {
-    id: "speed-400",
-    name: "Triumph Speed 400",
-    tagline: "Modern Classic Roadster DNA",
-    category: "Modern Classic",
-    price: "$4,995",
-    engine: "398 cc Liquid-Cooled Single",
-    power: "39.5 HP @ 8,000 rpm",
-    torque: "37.5 Nm @ 6,500 rpm",
-    weight: "170 kg",
-    topSpeed: "160 km/h",
-    accent: "#1890ff",
-    image: "https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Accessible Triumph character, unmatched build quality, agile chassis, and spirited responsive power made for city streets and twisty backroads.",
-    features: ["Upside-down 43mm Big Piston Forks", "Switchable Traction Control", "All-LED Lighting", "Classic Analog & LCD Console"],
-  },
-  {
-    id: "scrambler-400x",
-    name: "Scrambler 400 X",
-    tagline: "Rugged Style & All-Road Capability",
-    category: "Adventure",
-    price: "$5,595",
-    engine: "398 cc Liquid-Cooled Single",
-    power: "39.5 HP @ 8,000 rpm",
-    torque: "37.5 Nm @ 6,500 rpm",
-    weight: "179 kg",
-    topSpeed: "155 km/h",
-    accent: "#fa8c16",
-    image: "https://images.unsplash.com/photo-1558981420-87aa9210d992?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Purposeful scrambler styling with longer travel suspension, 19-inch front wheel, wide handlebars, and protective off-road accessories.",
-    features: ["19-inch Front Wheel", "Switchable ABS for Off-Road", "Headlight Grill & Handguards", "High Ground Clearance"],
-  },
-];
-
-const CATEGORIES = ["All", "Roadster", "Modern Classic", "Adventure", "Rocket"];
+// Single Flagship Model Data: Triumph Rocket 3 GT
+const FLAGSHIP_MODEL = {
+  name: "Triumph Rocket 3 GT",
+  edition: "Flagship Chrome & Carbon Edition",
+  price: "$24,495",
+  msrpNote: "Starting MSRP • Financing Available from 2.99% APR",
+  tagline: "The World's Largest Production Motorcycle Engine",
+  overview:
+    "An engineering masterpiece without equal. Housing a monumental 2,458cc triple engine, the Rocket 3 GT unleashes 221 Nm of torque for peerless acceleration, complemented by supreme touring ergonomics and bespoke British craftsmanship.",
+  colors: [
+    {
+      name: "Phantom Black & Granite",
+      hex: "#151515",
+      accent: "#c9a962",
+      image:
+        "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=85",
+    },
+    {
+      name: "Silver Ice & Cranberry Red",
+      hex: "#991b1b",
+      accent: "#e11d48",
+      image:
+        "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1600&q=85",
+    },
+    {
+      name: "Sapphire Metallic & Aluminum",
+      hex: "#1e3a8a",
+      accent: "#38bdf8",
+      image:
+        "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1600&q=85",
+    },
+  ],
+  specs: [
+    {
+      label: "Displacement",
+      value: "2,458 cc",
+      detail: "Inline 3-Cylinder DOHC",
+      icon: Gauge,
+    },
+    {
+      label: "Peak Power",
+      value: "165 HP",
+      detail: "@ 6,000 RPM",
+      icon: Zap,
+    },
+    {
+      label: "Peak Torque",
+      value: "221 Nm",
+      detail: "@ 4,000 RPM (World Record)",
+      icon: Flame,
+    },
+    {
+      label: "Acceleration",
+      value: "2.73s",
+      detail: "0 - 100 km/h Sprint",
+      icon: Shield,
+    },
+  ],
+  engineeringPoints: [
+    {
+      title: "Monstrous 2.5L Triple Engine",
+      description:
+        "Featuring the world's largest engine on a production motorcycle, delivering unmatched rolling acceleration with an unmistakable deep triple roar.",
+    },
+    {
+      title: "Brembo Stylema® Monobloc Calipers",
+      description:
+        "Cutting-edge superbike braking package with twin 320mm discs, optimized cornering ABS, and integrated traction control system.",
+    },
+    {
+      title: "High-Spec Adjustable Showa Suspension",
+      description:
+        "47mm inverted Showa front cartridge forks and a fully adjustable Showa piggyback reservoir rear monoshock for supreme ride plushness.",
+    },
+    {
+      title: "Next-Gen TFT Instrumentation",
+      description:
+        "Full-colour display offering personalized rider themes, Bluetooth phone connectivity, turn-by-turn navigation, and GoPro controls.",
+    },
+  ],
+};
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeBikeModal, setActiveBikeModal] = useState(null);
-  const [testRideBike, setTestRideBike] = useState(null);
+  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+  const [isTestRideModalOpen, setIsTestRideModalOpen] = useState(false);
   const [testRideBooked, setTestRideBooked] = useState(false);
+  const [activeTab, setActiveTab] = useState("specs");
+  const [isPlayingSound, setIsPlayingSound] = useState(false);
 
-  const filteredBikes = BIKES.filter((bike) => {
-    const matchesCategory =
-      selectedCategory === "All" || bike.category === selectedCategory;
-    const matchesSearch =
-      bike.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      bike.engine.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      bike.category.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const currentColor = FLAGSHIP_MODEL.colors[selectedColorIndex];
 
   const handleTestRideSubmit = (e) => {
     e.preventDefault();
     setTestRideBooked(true);
     setTimeout(() => {
       setTestRideBooked(false);
-      setTestRideBike(null);
-    }, 2500);
+      setIsTestRideModalOpen(false);
+    }, 2800);
+  };
+
+  const toggleSound = () => {
+    setIsPlayingSound(!isPlayingSound);
   };
 
   return (
     <div className="min-h-screen bg-[#0b0b0d] text-[#e8e6e1] selection:bg-[#c9a962] selection:text-[#0b0b0d]">
-      {/* Navigation */}
-      <Navbar />
+      {/* 1. Top Premium Navbar with Home, Explore, Models, Contact */}
+      <Navbar onOpenTestRide={() => setIsTestRideModalOpen(true)} />
 
-      {/* Hero Section */}
-      <header id="home" className="relative min-h-[85vh] flex items-center justify-center px-6 sm:px-12 overflow-hidden border-b border-[#26262b]">
-        {/* Background Ambient Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#c9a962]/10 rounded-full blur-[130px] pointer-events-none" />
-        
-        <div className="relative max-w-6xl mx-auto text-center z-10 py-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c9a962]/40 bg-[#c9a962]/10 text-[#e6cf9a] text-xs font-semibold uppercase tracking-widest mb-6">
-            <Sparkles size={14} className="text-[#c9a962]" />
-            Flagship 2025/2026 Collection
-          </div>
+      {/* 2. Hero Section - Flagship Single Model Reveal */}
+      <header id="home" className="relative min-h-[92vh] flex items-center justify-center px-6 sm:px-12 overflow-hidden border-b border-[#22242a]">
+        {/* Ambient Warm Golden Glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-[#c9a962]/12 rounded-full blur-[150px] pointer-events-none" />
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight uppercase leading-none mb-6">
-            Engineered For The{" "}
-            <span className="gold-gradient-text block mt-2">
-              Extraordinary
+        <div className="relative max-w-7xl mx-auto w-full py-12 z-10">
+          {/* Top Pill & Badges */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#c9a962]/40 bg-[#c9a962]/10 text-[#e6cf9a] text-[11px] font-bold tracking-widest uppercase">
+              <Sparkles size={13} className="text-[#c9a962]" />
+              {FLAGSHIP_MODEL.edition}
+            </div>
+
+            <span className="text-xs font-semibold text-[#8b8e96] tracking-wider uppercase">
+              Handcrafted in Hinckley, UK
             </span>
-          </h1>
-
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#9da0a6] leading-relaxed mb-10">
-            Immerse yourself in precision British engineering, iconic design, and peerless performance.
-            Explore our championship-winning roadsters, modern classics, and grand tourers.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#showroom"
-              className="px-8 py-4 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] font-bold text-sm uppercase tracking-wider rounded transition-all duration-300 shadow-[0_0_25px_rgba(201,169,98,0.35)]"
-            >
-              Explore Showroom
-            </a>
-            <button
-              onClick={() => setTestRideBike(BIKES[0])}
-              className="px-8 py-4 bg-transparent hover:bg-[#1a1b1f] text-[#e8e6e1] hover:text-[#c9a962] font-semibold text-sm uppercase tracking-wider rounded border border-[#36383f] hover:border-[#c9a962] transition-all duration-300"
-            >
-              Book Test Ride
-            </button>
           </div>
 
-          {/* Quick Heritage Ribbons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-[#1d1e22] text-left">
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-[#c9a962]">120+</p>
-              <p className="text-xs uppercase tracking-wider text-[#81848a]">Years of Heritage</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-[#c9a962]">2,458 cc</p>
-              <p className="text-xs uppercase tracking-wider text-[#81848a]">World's Largest Engine</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-[#c9a962]">Moto2™</p>
-              <p className="text-xs uppercase tracking-wider text-[#81848a]">Exclusive Engine Partner</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-[#c9a962]">2 Years</p>
-              <p className="text-xs uppercase tracking-wider text-[#81848a]">Unlimited Mileage Warranty</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Showroom & Models Section */}
-      <section id="showroom" className="py-20 px-6 sm:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#c9a962] uppercase tracking-widest mb-2">
-              <Flame size={14} />
-              Current Lineup
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight">
-              Vehicle Showroom
-            </h2>
-          </div>
-
-          {/* Search bar inside showroom */}
-          <div className="relative w-full md:w-72">
-            <input
-              type="text"
-              placeholder="Search by name, cc, style..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#131417] border border-[#2b2d33] rounded px-4 py-2.5 text-sm text-[#e8e6e1] placeholder-[#666970] focus:outline-none focus:border-[#c9a962] transition-colors"
-            />
-          </div>
-        </div>
-
-        {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none">
-          <SlidersHorizontal size={16} className="text-[#81848a] mr-2 shrink-0" />
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
-                selectedCategory === category
-                  ? "bg-[#c9a962] text-[#0b0b0d] shadow-[0_0_15px_rgba(201,169,98,0.3)]"
-                  : "bg-[#141518] text-[#9da0a6] hover:text-[#e8e6e1] border border-[#26262b] hover:border-[#40434b]"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        {/* Bike Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredBikes.map((bike) => (
-            <div
-              key={bike.id}
-              className="group bg-[#121316] rounded-lg border border-[#222429] hover:border-[#c9a962]/50 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:-translate-y-1"
-            >
-              {/* Bike Image Container */}
-              <div className="relative h-64 w-full bg-[#181a1f] overflow-hidden">
-                <img
-                  src={bike.image}
-                  alt={bike.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-black/30" />
-                
-                {/* Badge Category */}
-                <span className="absolute top-4 left-4 px-3 py-1 bg-black/70 backdrop-blur-md rounded text-[11px] font-bold uppercase tracking-wider text-[#c9a962] border border-[#c9a962]/30">
-                  {bike.category}
-                </span>
-
-                {/* Price Tag */}
-                <span className="absolute bottom-4 right-4 text-lg font-black text-white bg-black/80 px-3 py-1 rounded border border-white/10">
-                  {bike.price}
-                </span>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#c9a962] transition-colors">
-                    {bike.name}
-                  </h3>
-                  <p className="text-xs text-[#81848a] tracking-wide mb-4 mt-0.5">
-                    {bike.tagline}
-                  </p>
-
-                  <p className="text-xs text-[#a0a3aa] line-clamp-2 leading-relaxed mb-6">
-                    {bike.description}
-                  </p>
-
-                  {/* Quick Specs Grid */}
-                  <div className="grid grid-cols-2 gap-3 py-3 border-y border-[#202227] text-xs">
-                    <div className="flex items-center gap-2 text-[#9da0a6]">
-                      <Gauge size={14} className="text-[#c9a962]" />
-                      <span>{bike.engine}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#9da0a6]">
-                      <Zap size={14} className="text-[#c9a962]" />
-                      <span>{bike.power}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#9da0a6]">
-                      <Flame size={14} className="text-[#c9a962]" />
-                      <span>{bike.torque}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#9da0a6]">
-                      <Shield size={14} className="text-[#c9a962]" />
-                      <span>{bike.topSpeed}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="flex items-center gap-3 pt-6 mt-2">
-                  <button
-                    onClick={() => setActiveBikeModal(bike)}
-                    className="flex-1 py-2.5 px-3 rounded bg-[#1c1d22] hover:bg-[#25272e] border border-[#2d3038] hover:border-[#c9a962] text-xs font-bold uppercase tracking-wider text-[#e8e6e1] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    View Specs
-                    <ArrowUpRight size={14} />
-                  </button>
-                  <button
-                    onClick={() => setTestRideBike(bike)}
-                    className="py-2.5 px-4 rounded bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] text-xs font-extrabold uppercase tracking-wider transition-colors cursor-pointer"
-                  >
-                    Test Ride
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredBikes.length === 0 && (
-          <div className="py-20 text-center text-[#81848a]">
-            <p className="text-lg font-semibold">No vehicles found matching your criteria.</p>
-            <button
-              onClick={() => {
-                setSelectedCategory("All");
-                setSearchQuery("");
-              }}
-              className="mt-4 text-xs font-bold text-[#c9a962] uppercase tracking-wider underline cursor-pointer"
-            >
-              Reset Filters
-            </button>
-          </div>
-        )}
-      </section>
-
-      {/* Engineering Heritage Spotlight */}
-      <section id="specs" className="py-20 bg-[#0e0f12] border-y border-[#1f2025]">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-[#c9a962] uppercase tracking-widest">
-              Performance DNA
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight mt-2 mb-4">
-              Iconic Triple Engine Heritage
-            </h2>
-            <p className="text-sm text-[#9da0a6] leading-relaxed">
-              Every Triumph machine represents an obsessive pursuit of the perfect ride.
-              From our race-honed Moto2™ Triple to the world’s largest displacement cruiser.
+          {/* Model Title */}
+          <div className="text-center md:text-left mb-6">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tight leading-none">
+              ROCKET 3 <span className="gold-gradient-text">GT</span>
+            </h1>
+            <p className="text-sm sm:text-base text-[#c9a962] font-semibold tracking-widest uppercase mt-2">
+              {FLAGSHIP_MODEL.tagline}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-lg bg-[#141519] border border-[#22242a]">
-              <div className="w-12 h-12 rounded bg-[#c9a962]/10 border border-[#c9a962]/30 flex items-center justify-center text-[#c9a962] mb-6">
-                <Zap size={24} />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Instant Triple Power</h3>
-              <p className="text-xs text-[#9da0a6] leading-relaxed">
-                Combining bottom-end twin grunt with top-end four-cylinder scream for the ultimate usable power band.
-              </p>
+          {/* Featured Hero Bike Image Showcase */}
+          <div className="relative w-full h-[400px] sm:h-[520px] rounded-2xl overflow-hidden border border-[#262831] bg-[#101115] shadow-[0_20px_50px_rgba(0,0,0,0.85)] group">
+            <img
+              src={currentColor.image}
+              alt={FLAGSHIP_MODEL.name}
+              className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-102"
+            />
+            {/* Dark Vignette Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-transparent to-black/30" />
+
+            {/* Price Badge on Image */}
+            <div className="absolute top-6 right-6 bg-black/80 backdrop-blur-md px-5 py-2.5 rounded-lg border border-[#c9a962]/40 text-right">
+              <span className="text-[10px] uppercase tracking-widest text-[#8b8e96] block">Starting At</span>
+              <span className="text-2xl font-black text-white">{FLAGSHIP_MODEL.price}</span>
             </div>
 
-            <div className="p-8 rounded-lg bg-[#141519] border border-[#22242a]">
-              <div className="w-12 h-12 rounded bg-[#c9a962]/10 border border-[#c9a962]/30 flex items-center justify-center text-[#c9a962] mb-6">
-                <Shield size={24} />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Race Chassis Dynamics</h3>
-              <p className="text-xs text-[#9da0a6] leading-relaxed">
-                Fitted with Showa, Öhlins, and Brembo components crafted to provide intuitive confidence at any lean angle.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-lg bg-[#141519] border border-[#22242a]">
-              <div className="w-12 h-12 rounded bg-[#c9a962]/10 border border-[#c9a962]/30 flex items-center justify-center text-[#c9a962] mb-6">
-                <Star size={24} />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Craftsmanship & Detail</h3>
-              <p className="text-xs text-[#9da0a6] leading-relaxed">
-                Hand-painted coach lining, machined aluminium brackets, and deep lustrous finishes define every build.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bike Details Modal */}
-      {activeBikeModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#131418] border border-[#33353d] rounded-xl max-w-2xl w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+            {/* Audio Engine Sim Sound Button */}
             <button
-              onClick={() => setActiveBikeModal(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 text-[#a0a3aa] hover:text-white flex items-center justify-center border border-white/10 cursor-pointer"
+              onClick={toggleSound}
+              className="absolute top-6 left-6 inline-flex items-center gap-2 bg-black/80 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 text-xs font-semibold text-[#e8e6e1] hover:text-[#c9a962] hover:border-[#c9a962]/50 transition-colors cursor-pointer"
             >
-              <X size={18} />
+              {isPlayingSound ? <Volume2 size={16} className="text-[#c9a962] animate-pulse" /> : <VolumeX size={16} />}
+              <span>{isPlayingSound ? "Engine Audio Active" : "Hear 2.5L Exhaust"}</span>
             </button>
 
-            <div className="relative h-60 w-full bg-[#1b1c22]">
-              <img
-                src={activeBikeModal.image}
-                alt={activeBikeModal.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#131418] via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-6">
-                <span className="px-2.5 py-1 bg-[#c9a962] text-[#0b0b0d] text-[10px] font-black uppercase rounded tracking-wider">
-                  {activeBikeModal.category}
+            {/* Interactive Color Switcher Bar */}
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#0e0f13]/85 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10">
+              <div className="flex items-center gap-3">
+                <span className="text-xs uppercase tracking-wider text-[#8b8e96] font-bold">
+                  Colorway:
                 </span>
-                <h3 className="text-2xl font-black text-white mt-1">
-                  {activeBikeModal.name}
-                </h3>
-              </div>
-            </div>
-
-            <div className="p-6">
-              <p className="text-xs text-[#a0a3aa] leading-relaxed mb-6">
-                {activeBikeModal.description}
-              </p>
-
-              <h4 className="text-xs font-bold text-[#c9a962] uppercase tracking-wider mb-3">
-                Full Technical Specifications
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 bg-[#0c0d10] p-4 rounded-lg border border-[#22242a] text-xs">
-                <div>
-                  <span className="text-[10px] uppercase text-[#73767e] block">Engine</span>
-                  <span className="font-semibold text-white">{activeBikeModal.engine}</span>
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase text-[#73767e] block">Max Power</span>
-                  <span className="font-semibold text-white">{activeBikeModal.power}</span>
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase text-[#73767e] block">Max Torque</span>
-                  <span className="font-semibold text-white">{activeBikeModal.torque}</span>
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase text-[#73767e] block">Wet Weight</span>
-                  <span className="font-semibold text-white">{activeBikeModal.weight}</span>
-                </div>
+                <span className="text-xs font-semibold text-white">
+                  {currentColor.name}
+                </span>
               </div>
 
-              <h4 className="text-xs font-bold text-[#c9a962] uppercase tracking-wider mb-3">
-                Key Standard Equipment
-              </h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#cfd2d8] mb-6">
-                {activeBikeModal.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <CheckCircle2 size={14} className="text-[#c9a962] shrink-0" />
-                    <span>{feature}</span>
-                  </li>
+              <div className="flex items-center gap-3">
+                {FLAGSHIP_MODEL.colors.map((color, idx) => (
+                  <button
+                    key={color.name}
+                    onClick={() => setSelectedColorIndex(idx)}
+                    className={`w-7 h-7 rounded-full border-2 transition-transform cursor-pointer ${
+                      selectedColorIndex === idx
+                        ? "scale-125 border-[#c9a962] shadow-[0_0_12px_rgba(201,169,98,0.7)]"
+                        : "border-[#40434b] hover:border-white opacity-70"
+                    }`}
+                    style={{ backgroundColor: color.hex }}
+                    title={color.name}
+                  />
                 ))}
-              </ul>
+              </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-[#22242a]">
-                <div>
-                  <span className="text-[10px] uppercase text-[#73767e] block">MSRP From</span>
-                  <span className="text-xl font-black text-white">{activeBikeModal.price}</span>
-                </div>
+              <div className="flex items-center gap-3">
                 <button
-                  onClick={() => {
-                    const bike = activeBikeModal;
-                    setActiveBikeModal(null);
-                    setTestRideBike(bike);
-                  }}
-                  className="px-6 py-2.5 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] text-xs font-bold uppercase tracking-wider rounded cursor-pointer transition-colors"
+                  onClick={() => setIsTestRideModalOpen(true)}
+                  className="px-6 py-2.5 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_rgba(201,169,98,0.4)]"
                 >
-                  Book A Test Ride
+                  Book Test Ride
                 </button>
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      {/* Book Test Ride Modal */}
-      {testRideBike && (
+          {/* Key Specs Ribbon */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            {FLAGSHIP_MODEL.specs.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.label}
+                  className="bg-[#121317] border border-[#22242a] p-5 rounded-xl flex items-center gap-4 hover:border-[#c9a962]/40 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center text-[#c9a962] shrink-0">
+                    <Icon size={22} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold text-[#81848a] uppercase tracking-wider block">
+                      {item.label}
+                    </span>
+                    <span className="text-2xl font-black text-white block leading-tight">
+                      {item.value}
+                    </span>
+                    <span className="text-[11px] text-[#a0a3aa]">
+                      {item.detail}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </header>
+
+      {/* 3. Explore Section - Deep Dive Engineering */}
+      <section id="explore" className="py-24 px-6 sm:px-12 max-w-7xl mx-auto border-b border-[#22242a]">
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#c9a962] uppercase tracking-widest mb-2">
+            <Shield size={14} />
+            Pure British Craftsmanship
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-extrabold uppercase tracking-tight">
+            Explore Engineering
+          </h2>
+          <p className="text-sm sm:text-base text-[#9da0a6] mt-4 leading-relaxed">
+            {FLAGSHIP_MODEL.overview}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {FLAGSHIP_MODEL.engineeringPoints.map((point, index) => (
+            <div
+              key={point.title}
+              className="p-8 rounded-xl bg-[#121317] border border-[#22242b] hover:border-[#c9a962]/40 transition-all hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+            >
+              <div className="text-xs font-extrabold text-[#c9a962] uppercase tracking-widest mb-3">
+                Phase 0{index + 1}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                {point.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#9da0a6] leading-relaxed">
+                {point.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. Models Section - Full Specs & Features of the Rocket 3 GT */}
+      <section id="model" className="py-24 px-6 sm:px-12 max-w-7xl mx-auto border-b border-[#22242a]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span className="text-xs font-bold text-[#c9a962] uppercase tracking-widest">
+              Flagship Spec Sheet
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight mt-1">
+              Rocket 3 GT Specifications
+            </h2>
+          </div>
+
+          {/* Navigation Pill tabs */}
+          <div className="flex items-center gap-2 bg-[#141519] p-1.5 rounded-lg border border-[#2b2d35]">
+            <button
+              onClick={() => setActiveTab("specs")}
+              className={`px-5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                activeTab === "specs"
+                  ? "bg-[#c9a962] text-[#0b0b0d]"
+                  : "text-[#9da0a6] hover:text-white"
+              }`}
+            >
+              Technical Specs
+            </button>
+            <button
+              onClick={() => setActiveTab("equipment")}
+              className={`px-5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                activeTab === "equipment"
+                  ? "bg-[#c9a962] text-[#0b0b0d]"
+                  : "text-[#9da0a6] hover:text-white"
+              }`}
+            >
+              Standard Tech
+            </button>
+          </div>
+        </div>
+
+        {activeTab === "specs" ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Engine Architecture</span>
+              <p className="text-lg font-bold text-white mt-1">Inline 3-Cylinder, Liquid-Cooled</p>
+              <p className="text-xs text-[#81848a] mt-2">DOHC, 4 valves per cylinder with ride-by-wire fuel injection.</p>
+            </div>
+
+            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Final Drive & Gearbox</span>
+              <p className="text-lg font-bold text-white mt-1">6-Speed with Shaft Drive</p>
+              <p className="text-xs text-[#81848a] mt-2">Maintenance-free shaft drive housed in a sculpted single-sided swingarm.</p>
+            </div>
+
+            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Chassis & Frame</span>
+              <p className="text-lg font-bold text-white mt-1">Full Aluminium Spine</p>
+              <p className="text-xs text-[#81848a] mt-2">Mass-optimized cast aluminium frame using the engine as a stressed member.</p>
+            </div>
+
+            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Fuel Capacity</span>
+              <p className="text-lg font-bold text-white mt-1">18.0 Litres (4.75 US gal)</p>
+              <p className="text-xs text-[#81848a] mt-2">Sculpted alloy tank with iconic brushed stainless steel Monroe strap.</p>
+            </div>
+
+            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Seat Height</span>
+              <p className="text-lg font-bold text-white mt-1">750 mm (29.5 in)</p>
+              <p className="text-xs text-[#81848a] mt-2">Sculpted touring saddle with adjustable pillion backrest.</p>
+            </div>
+
+            <div className="bg-[#121316] p-6 rounded-xl border border-[#222429]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#c9a962]">Dry / Wet Weight</span>
+              <p className="text-lg font-bold text-white mt-1">294 kg Wet (40 kg lighter)</p>
+              <p className="text-xs text-[#81848a] mt-2">Revolutionary mass centralization for nimble cruiser agility.</p>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              "Optimized Cornering ABS & Traction Control with IMU support",
+              "Four Selectable Riding Modes: Road, Rain, Sport, Rider-Configurable",
+              "All-LED Lighting with Signature Daytime Running Light (DRL)",
+              "Hill Hold Control with automatic rear brake pressure",
+              "Electronic Cruise Control with one-button activation",
+              "Keyless Ignition, Steering Lock, and Fuel Filler Cap",
+              "Under-Seat USB Power Socket with dedicated smartphone compartment",
+              "Triumph Shift Assist (Bi-Directional Quickshifter) available",
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 p-4 bg-[#121317] rounded-lg border border-[#202228] text-xs sm:text-sm text-[#e0e3e9]"
+              >
+                <CheckCircle2 size={16} className="text-[#c9a962] shrink-0" />
+                <span>{feature}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* 5. Contact Section - Official Showroom Portal */}
+      <footer id="contact" className="py-20 px-6 sm:px-12 max-w-7xl mx-auto text-xs text-[#8b8e96]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 pb-16 border-b border-[#202228]">
+          <div>
+            <div className="text-white font-black text-xl tracking-widest mb-3">
+              <span className="gold-gradient-text">TRIUMPH</span> SHOWROOM
+            </div>
+            <p className="text-xs text-[#9da0a6] leading-relaxed mb-6">
+              Experience the pinnacle of motorcycle engineering. Schedule your one-on-one VIP showroom consultation or private track test ride.
+            </p>
+            <button
+              onClick={() => setIsTestRideModalOpen(true)}
+              className="px-6 py-3 bg-[#c9a962] hover:bg-[#e6cf9a] text-[#0b0b0d] font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer"
+            >
+              Request Test Ride
+            </button>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
+              Direct Contact
+            </h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-white">
+                <Phone size={15} className="text-[#c9a962]" />
+                <span>+1 (800) 555-TRIUMPH (874-8674)</span>
+              </div>
+              <div className="flex items-center gap-3 text-white">
+                <Mail size={15} className="text-[#c9a962]" />
+                <span>concierge@triumph-showroom.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-white">
+                <MapPin size={15} className="text-[#c9a962]" />
+                <span>Hinckley Flagship Experience Center</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
+              Showroom Hours
+            </h4>
+            <div className="space-y-2">
+              <div className="flex justify-between border-b border-[#1c1d22] pb-1.5">
+                <span>Monday - Friday</span>
+                <span className="text-white font-semibold">9:00 AM - 8:00 PM</span>
+              </div>
+              <div className="flex justify-between border-b border-[#1c1d22] pb-1.5">
+                <span>Saturday</span>
+                <span className="text-white font-semibold">9:00 AM - 6:00 PM</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Sunday</span>
+                <span className="text-[#c9a962] font-semibold">By VIP Appointment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6b6e76]">
+          <p>© {new Date().getFullYear()} Triumph Motorcycles Showroom. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#home" className="hover:text-white">Home</a>
+            <a href="#explore" className="hover:text-white">Explore</a>
+            <a href="#model" className="hover:text-white">Models</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </div>
+        </div>
+      </footer>
+
+      {/* 6. VIP Test Ride Booking Modal */}
+      {isTestRideModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#141519] border border-[#30323a] rounded-xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
             <button
               onClick={() => {
-                setTestRideBike(null);
+                setIsTestRideModalOpen(false);
                 setTestRideBooked(false);
               }}
               className="absolute top-4 right-4 text-[#81848a] hover:text-white cursor-pointer"
@@ -514,20 +472,20 @@ function App() {
                 <CheckCircle2 size={54} className="text-[#52c41a] mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">Test Ride Scheduled!</h3>
                 <p className="text-xs text-[#9da0a6] leading-relaxed">
-                  Our dealership representative will contact you shortly to confirm your VIP test ride slot for the{" "}
-                  <strong className="text-white">{testRideBike.name}</strong>.
+                  Our VIP Concierge will contact you shortly to confirm your private track session for the{" "}
+                  <strong className="text-white">{FLAGSHIP_MODEL.name}</strong>.
                 </p>
               </div>
             ) : (
               <div>
                 <span className="text-xs font-bold text-[#c9a962] uppercase tracking-wider">
-                  Official Showroom
+                  Official Showroom Concierge
                 </span>
                 <h3 className="text-2xl font-black text-white mt-1 mb-1">
-                  Schedule A Test Ride
+                  Schedule A VIP Test Ride
                 </h3>
                 <p className="text-xs text-[#81848a] mb-6">
-                  Selected Model: <strong className="text-white">{testRideBike.name}</strong>
+                  Selected Model: <strong className="text-[#c9a962]">{FLAGSHIP_MODEL.name}</strong> ({currentColor.name})
                 </p>
 
                 <form onSubmit={handleTestRideSubmit} className="space-y-4">
@@ -572,9 +530,9 @@ function App() {
                       Nearest Dealer Location
                     </label>
                     <select className="w-full bg-[#0d0e11] border border-[#262830] rounded px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#c9a962]">
-                      <option>Downtown Triumph Experience Center</option>
-                      <option>West Coast Flagship Showroom</option>
-                      <option>Metro Triumph Motorcycle Hub</option>
+                      <option>Hinckley Flagship Experience Center</option>
+                      <option>Downtown Triumph Hub</option>
+                      <option>West Coast Triumph Pavilion</option>
                     </select>
                   </div>
 
@@ -590,55 +548,6 @@ function App() {
           </div>
         </div>
       )}
-
-      {/* Footer */}
-      <footer id="contact" className="bg-[#08080a] border-t border-[#1a1b1f] py-16 px-6 sm:px-12 text-xs text-[#72757c]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between gap-10">
-          <div>
-            <div className="flex items-center gap-2 text-white font-extrabold text-lg tracking-widest mb-3">
-              <span className="text-[#c9a962]">TRIUMPH</span> SHOWROOM
-            </div>
-            <p className="max-w-sm text-[#81848a] leading-relaxed">
-              Official vehicle showroom & dealership portal. Discover our legendary range of precision-crafted British motorcycles.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-            <div>
-              <h5 className="font-bold uppercase text-white tracking-wider mb-3">Lineup</h5>
-              <ul className="space-y-2">
-                <li><a href="#showroom" className="hover:text-[#c9a962]">Roadsters</a></li>
-                <li><a href="#showroom" className="hover:text-[#c9a962]">Modern Classics</a></li>
-                <li><a href="#showroom" className="hover:text-[#c9a962]">Adventure</a></li>
-                <li><a href="#showroom" className="hover:text-[#c9a962]">Rocket 3</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="font-bold uppercase text-white tracking-wider mb-3">Services</h5>
-              <ul className="space-y-2">
-                <li><a href="#home" className="hover:text-[#c9a962]">Book Test Ride</a></li>
-                <li><a href="#specs" className="hover:text-[#c9a962]">Genuine Parts</a></li>
-                <li><a href="#specs" className="hover:text-[#c9a962]">Custom Accessories</a></li>
-                <li><a href="#home" className="hover:text-[#c9a962]">Financing</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="font-bold uppercase text-white tracking-wider mb-3">Showroom</h5>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-1.5"><MapPin size={12} /> Flagship Hub</li>
-                <li className="flex items-center gap-1.5"><Phone size={12} /> +1 (800) 555-BIKE</li>
-                <li className="flex items-center gap-1.5"><Calendar size={12} /> Mon-Sat: 9AM - 8PM</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-[#151619] text-center text-[#595b61]">
-          © {new Date().getFullYear()} Vehicle Showroom. All rights reserved. Triumph is a registered trademark.
-        </div>
-      </footer>
     </div>
   );
 }
