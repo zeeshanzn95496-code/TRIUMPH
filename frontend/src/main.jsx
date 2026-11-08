@@ -1,13 +1,10 @@
-import { StrictMode, useEffect, useRef } from "react";
+import { StrictMode, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Lenis from "lenis";
-import gsap from "gsap";
 import App from "./App";
 import "./App.css";
 
 function Root() {
-  const navRef = useRef(null);
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -21,27 +18,13 @@ function Root() {
     };
     rafId = requestAnimationFrame(raf);
 
-    const navbar = navRef.current?.querySelector("nav");
-    if (navbar) {
-      gsap.from(navbar, {
-        y: -80,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      });
-    }
-
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
 
-  return (
-    <div ref={navRef}>
-      <App />
-    </div>
-  );
+  return <App />;
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
