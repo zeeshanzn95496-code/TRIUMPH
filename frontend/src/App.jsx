@@ -6,13 +6,8 @@ import {
   Flame,
   Shield,
   X,
-  Calendar,
-  MapPin,
-  Phone,
-  Mail,
   Sparkles,
   CheckCircle2,
-  ArrowUpRight,
   Volume2,
   VolumeX,
   Compass,
@@ -437,90 +432,7 @@ function App() {
         )}
       </section>
 
-      {/* 5. Contact Section - Official Showroom Portal */}
-      <footer
-        id="contact"
-        className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08] text-xs text-zinc-400"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-14 mb-16 pb-12 border-b border-white/[0.06]">
-          {/* Column 1: Showroom Info */}
-          <div>
-            <div className="text-white font-black text-xl tracking-[0.2em] mb-3">
-              TRIUMPH MOTORCYCLES
-            </div>
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
-              Experience the unmatched force of British motorcycling. Book an exclusive private appointment or track session with our product specialists.
-            </p>
-            <button
-              onClick={() => setIsTestRideModalOpen(true)}
-              className="px-6 py-2.5 rounded-full border border-white/20 bg-white/[0.04] hover:bg-white text-zinc-200 hover:text-black font-bold text-xs tracking-[0.14em] uppercase transition-all cursor-pointer"
-            >
-              Request Consultation
-            </button>
-          </div>
-
-          {/* Column 2: Direct Contacts */}
-          <div>
-            <h4 className="text-xs font-bold text-white tracking-[0.18em] uppercase mb-4">
-              Direct Inquiries
-            </h4>
-            <div className="space-y-3.5">
-              <a
-                href="tel:18005558748"
-                className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors"
-              >
-                <Phone size={15} className="text-zinc-400" />
-                <span>1-800-555-TRIUMPH (874-8674)</span>
-              </a>
-              <a
-                href="mailto:concierge@triumph-experience.com"
-                className="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors"
-              >
-                <Mail size={15} className="text-zinc-400" />
-                <span>concierge@triumph-experience.com</span>
-              </a>
-              <div className="flex items-center gap-3 text-zinc-300">
-                <MapPin size={15} className="text-zinc-400 shrink-0" />
-                <span>Hinckley Flagship Experience Center, UK</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 3: Hours */}
-          <div>
-            <h4 className="text-xs font-bold text-white tracking-[0.18em] uppercase mb-4">
-              Showroom Hours
-            </h4>
-            <div className="space-y-2.5">
-              <div className="flex justify-between pb-1.5 border-b border-white/[0.04]">
-                <span>Monday – Friday</span>
-                <span className="text-white font-semibold">09:00 – 19:00</span>
-              </div>
-              <div className="flex justify-between pb-1.5 border-b border-white/[0.04]">
-                <span>Saturday</span>
-                <span className="text-white font-semibold">09:00 – 18:00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Sunday</span>
-                <span className="text-zinc-300 font-semibold">VIP Appointment Only</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Legal / Nav */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
-          <p>© {new Date().getFullYear()} Triumph Motorcycles. All Rights Reserved.</p>
-          <div className="flex items-center gap-6">
-            <a href="#home" className="hover:text-white transition-colors">Home</a>
-            <a href="#explore" className="hover:text-white transition-colors">Explore</a>
-            <a href="#models" className="hover:text-white transition-colors">Models</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
-
-      {/* 6. VIP Test Ride Booking Modal */}
+      {/* 5. VIP Test Ride Booking Modal */}
       {isTestRideModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#101117] border border-white/10 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
