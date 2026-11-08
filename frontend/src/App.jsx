@@ -304,7 +304,7 @@ function App() {
 
       {/* 3. Explore Section - Engineering Breakdown */}
       <section
-        id="explore"
+        id="about"
         className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.06]"
       >
         <div className="max-w-3xl mb-10 sm:mb-14">

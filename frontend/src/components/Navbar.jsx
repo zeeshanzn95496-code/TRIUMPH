@@ -73,10 +73,10 @@ function Navbar({ onOpenTestRide }) {
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
           </a>
           <a
-            href="#explore"
+            href="#about"
             className="text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group"
           >
-            Explore
+            About
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
           </a>
           <a
@@ -128,11 +128,11 @@ function Navbar({ onOpenTestRide }) {
               Home
             </a>
             <a
-              href="#explore"
+              href="#about"
               onClick={closeMobileMenu}
               className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06]"
             >
-              Explore
+              About
             </a>
             <a
               href="#models"
