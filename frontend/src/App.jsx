@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
+import Models from "./components/Models";
 import {
   Gauge,
   Zap,
@@ -349,7 +350,7 @@ function App() {
 
       {/* 4. Models Section - Full Specs & Features */}
       <section
-        id="models"
+        id="anatomy"
         className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.06]"
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
@@ -432,7 +433,10 @@ function App() {
         )}
       </section>
 
-      {/* 5. VIP Test Ride Booking Modal */}
+      {/* 5. Models Grid - Product Cards */}
+      <Models onTestRide={() => setIsTestRideModalOpen(true)} />
+
+      {/* 6. VIP Test Ride Booking Modal */}
       {isTestRideModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#101117] border border-white/10 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
