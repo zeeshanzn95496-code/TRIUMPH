@@ -33,21 +33,21 @@ const FLAGSHIP = {
       hex: "#991b1b",
       borderHex: "#ef4444",
       image:
-        "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1800&q=85",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ28WvumXcWFjkz9vkt3S0GNhWyUwZEgI0DTVJRXOpQ-Q&s=10",
     },
     {
-      name: "Jet Black",
+      name: "Phantom Black",
       hex: "#161618",
       borderHex: "#44464f",
       image:
-        "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1800&q=85",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUD36YAOalPgtBIvYjitI4td9KGx6syXqspWrLyQ0M6w&s=10",
     },
     {
-      name: "Silver Ice & Graphite",
-      hex: "#4b5563",
+      name: "Silver Ice & White",
+      hex: "white",
       borderHex: "#9ca3af",
       image:
-        "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDG-y0iL4FauPEZl5o5RkXgKGNPYFjkemJ08GPYQfNw&s=10",
     },
   ],
   specs: [
