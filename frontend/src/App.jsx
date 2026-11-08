@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
 import ModelDetail from "./components/ModelDetail";
+import About from "./components/About";
 import {
   Gauge,
   Zap,
@@ -162,6 +163,11 @@ function App() {
     if (dest === "models") {
       setPage("models");
       window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (dest === "about") {
+      setPage("about");
+      window.scrollTo({ top: 0 });
       return;
     }
     setPage("home");
@@ -474,6 +480,8 @@ function App() {
           />
         </div>
       )}
+
+      {page === "about" && <About />}
 
       {page === "model" && selectedModel && (
         <ModelDetail
