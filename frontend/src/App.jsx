@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
+import ModelDetail from "./components/ModelDetail";
 import {
   Gauge,
   Zap,
@@ -147,8 +148,15 @@ function App() {
   const [testRideBooked, setTestRideBooked] = useState(false);
   const [soundActive, setSoundActive] = useState(false);
   const [page, setPage] = useState("home");
+  const [selectedModel, setSelectedModel] = useState(null);
 
   const currentColor = FLAGSHIP.colors[selectedColorIndex];
+
+  const openModel = (model) => {
+    setSelectedModel(model);
+    setPage("model");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const navigate = (dest) => {
     if (dest === "models") {
@@ -460,8 +468,22 @@ function App() {
 
       {page === "models" && (
         <div className="pt-28">
-          <Models onTestRide={() => setIsTestRideModalOpen(true)} />
+          <Models
+            onTestRide={() => setIsTestRideModalOpen(true)}
+            onSelect={openModel}
+          />
         </div>
+      )}
+
+      {page === "model" && selectedModel && (
+        <ModelDetail
+          model={selectedModel}
+          onBack={() => {
+            setPage("models");
+            window.scrollTo({ top: 0 });
+          }}
+          onTestRide={() => setIsTestRideModalOpen(true)}
+        />
       )}
 
       {/* 6. VIP Test Ride Booking Modal */}

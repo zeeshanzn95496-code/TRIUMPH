@@ -1,7 +1,7 @@
 import { Star, StarHalf, Truck, BadgeCheck, ChevronRight } from "lucide-react";
 import "./Models.css";
 
-const MODELS = [
+export const MODELS = [
   {
     id: "speed-400",
     brand: "Triumph Motorcycles",
@@ -35,9 +35,11 @@ function Stars({ rating }) {
   );
 }
 
-function ProductCard({ model, onTestRide }) {
+function ProductCard({ model, onTestRide, onSelect }) {
   return (
-    <div className="model-card">
+    <div className="model-card" onClick={() => onSelect?.(model)} role="button" tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onSelect?.(model)}
+    >
       {/* Image */}
       <div className="model-card__image">
         <img src={model.image} alt={model.name} />
@@ -75,7 +77,13 @@ function ProductCard({ model, onTestRide }) {
         </div>
 
         {/* CTA */}
-        <button className="model-card__cta" onClick={onTestRide}>
+        <button
+          className="model-card__cta"
+          onClick={(e) => {
+            e.stopPropagation();
+            onTestRide?.();
+          }}
+        >
           <BadgeCheck size={14} />
           Book Test Ride
           <ChevronRight size={14} />
@@ -85,7 +93,7 @@ function ProductCard({ model, onTestRide }) {
   );
 }
 
-function Models({ onTestRide }) {
+function Models({ onTestRide, onSelect }) {
   return (
     <section className="models-section" id="models">
       <div className="models-section__header">
@@ -95,7 +103,12 @@ function Models({ onTestRide }) {
 
       <div className="models-section__grid">
         {MODELS.map((model) => (
-          <ProductCard key={model.id} model={model} onTestRide={onTestRide} />
+          <ProductCard
+            key={model.id}
+            model={model}
+            onTestRide={onTestRide}
+            onSelect={onSelect}
+          />
         ))}
       </div>
     </section>
