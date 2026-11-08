@@ -65,22 +65,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: about-gradient-slide 4s linear infinite;
-  transition: letter-spacing 0.5s ease, filter 0.5s ease;
-}
-
-.about-page__title:hover .about-page__title-line--gradient {
-  animation-duration: 1.2s;
-  filter: drop-shadow(0 0 24px rgba(255, 216, 20, 0.35));
-  letter-spacing: 0.02em;
-}
-
-.about-page__title-line {
-  transition: letter-spacing 0.5s ease, color 0.5s ease;
-}
-
-.about-page__title:hover .about-page__title-line:not(.about-page__title-line--gradient) {
-  color: #d4d4d8;
-  letter-spacing: 0.04em;
 }
 
 @keyframes about-gradient-slide {

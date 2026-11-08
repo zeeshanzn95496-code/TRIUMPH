@@ -7,9 +7,9 @@ function About() {
         <span className="about-page__eyebrow">About Triumph Motorcycles</span>
 
         <h1 className="about-page__title">
-          <span className="about-page__title-line">WEBSITE IS</span>
+         
           <span className="about-page__title-line about-page__title-line--gradient">
-            UNDER CONSTRUCTION
+           WEBSITE IS UNDER CONSTRUCTION
           </span>
         </h1>
 
