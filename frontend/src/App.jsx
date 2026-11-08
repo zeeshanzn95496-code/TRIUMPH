@@ -146,8 +146,25 @@ function App() {
   const [isTestRideModalOpen, setIsTestRideModalOpen] = useState(false);
   const [testRideBooked, setTestRideBooked] = useState(false);
   const [soundActive, setSoundActive] = useState(false);
+  const [page, setPage] = useState("home");
 
   const currentColor = FLAGSHIP.colors[selectedColorIndex];
+
+  const navigate = (dest) => {
+    if (dest === "models") {
+      setPage("models");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    setPage("home");
+    setTimeout(() => {
+      if (dest && dest !== "home") {
+        document.getElementById(dest)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, 60);
+  };
 
   const handleTestRideSubmit = (e) => {
     e.preventDefault();
@@ -161,8 +178,13 @@ function App() {
   return (
     <div className="min-h-screen bg-[#07080a] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black">
       {/* 1. Global Fixed Premium Navbar */}
-      <Navbar onOpenTestRide={() => setIsTestRideModalOpen(true)} />
+      <Navbar
+        onOpenTestRide={() => setIsTestRideModalOpen(true)}
+        onNavigate={navigate}
+      />
 
+      {page === "home" && (
+        <>
       {/* 2. Hero Section - Single Model Showcase */}
       <section
         id="home"
@@ -433,8 +455,14 @@ function App() {
         )}
       </section>
 
-      {/* 5. Models Grid - Product Cards */}
-      <Models onTestRide={() => setIsTestRideModalOpen(true)} />
+        </>
+      )}
+
+      {page === "models" && (
+        <div className="pt-28">
+          <Models onTestRide={() => setIsTestRideModalOpen(true)} />
+        </div>
+      )}
 
       {/* 6. VIP Test Ride Booking Modal */}
       {isTestRideModalOpen && (

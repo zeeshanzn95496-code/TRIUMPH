@@ -31,7 +31,10 @@ function TriumphLogo() {
   );
 }
 
-function Navbar({ onOpenTestRide }) {
+const linkClass =
+  "text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group cursor-pointer bg-transparent border-0";
+
+function Navbar({ onOpenTestRide, onNavigate }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -45,6 +48,11 @@ function Navbar({ onOpenTestRide }) {
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
+  const handleNav = (dest) => {
+    closeMobileMenu();
+    if (onNavigate) onNavigate(dest);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -55,44 +63,31 @@ function Navbar({ onOpenTestRide }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <a
-          href="#home"
-          className="group flex items-center"
-          onClick={closeMobileMenu}
+        <button
+          onClick={() => handleNav("home")}
+          className="group flex items-center bg-transparent border-0 cursor-pointer"
         >
           <TriumphLogo />
-        </a>
+        </button>
 
         {/* Center: Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8 lg:gap-11">
-          <a
-            href="#home"
-            className="text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group"
-          >
+          <button onClick={() => handleNav("home")} className={linkClass}>
             Home
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
-          </a>
-          <a
-            href="#about"
-            className="text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group"
-          >
+          </button>
+          <button onClick={() => handleNav("about")} className={linkClass}>
             About
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
-          </a>
-          <a
-            href="#models"
-            className="text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group"
-          >
+          </button>
+          <button onClick={() => handleNav("models")} className={linkClass}>
             Models
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
-          </a>
-          <a
-            href="#contact"
-            className="text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group"
-          >
+          </button>
+          <button onClick={() => handleNav("contact")} className={linkClass}>
             Contact
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
-          </a>
+          </button>
         </div>
 
         {/* Right: Actions */}
@@ -120,34 +115,30 @@ function Navbar({ onOpenTestRide }) {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0c0d12]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-6 transition-all duration-300 animate-in slide-in-from-top-4">
           <div className="flex flex-col space-y-4">
-            <a
-              href="#home"
-              onClick={closeMobileMenu}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06]"
+            <button
+              onClick={() => handleNav("home")}
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               Home
-            </a>
-            <a
-              href="#about"
-              onClick={closeMobileMenu}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06]"
+            </button>
+            <button
+              onClick={() => handleNav("about")}
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               About
-            </a>
-            <a
-              href="#models"
-              onClick={closeMobileMenu}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06]"
+            </button>
+            <button
+              onClick={() => handleNav("models")}
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               Models
-            </a>
-            <a
-              href="#contact"
-              onClick={closeMobileMenu}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06]"
+            </button>
+            <button
+              onClick={() => handleNav("contact")}
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               Contact
-            </a>
+            </button>
 
             <div className="pt-2">
               <button
