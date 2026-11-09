@@ -1,5 +1,7 @@
 import { Star, StarHalf, Truck, BadgeCheck, ChevronRight } from "lucide-react";
 import "./Models.css";
+import scramblerImg from"./images/scrambler.jpg";
+import speed400 from"./images/speed400.webp"
 
 export const MODELS = [
   {
@@ -14,23 +16,21 @@ export const MODELS = [
     discount: "11% off",
     emi: "EMI from $229/mo",
     tag: "398cc Single • 40 PS • 6-Speed • ABS",
-    image:
-      "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
+    image:speed400,
   },
   {
-    id: "speed-400",
+    id: "scrambler-400X",
     brand: "Triumph Motorcycles",
-    name: "Triumph Speed 400 — 2025 Edition, Phantom Black",
-    badge: "Best Seller",
+    name: "Triumph Scrambler 400X — 2025 Edition, Phantom Black",
+    badge: "Best adventure in segment",
     rating: 4.8,
-    reviews: "2,417",
-    price: "$5,495",
-    mrp: "$6,200",
-    discount: "11% off",
-    emi: "EMI from $229/mo",
-    tag: "398cc Single • 40 PS • 6-Speed • ABS",
-    image:
-      "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
+    reviews: "1,890",
+    price: "$6,000",
+    mrp: "$6,700",
+    discount: "13% off",
+    emi: "EMI from $260/mo",
+    tag: "398cc Single • 40 PS • 6-Speed • switchable-ABS",
+    image:scramblerImg,
   },
 ];
 
