@@ -7,7 +7,7 @@ export const MODELS = [
   {
     id: "speed-400",
     brand: "Triumph Motorcycles",
-    name: "Triumph Speed 400 — 2025 Edition, Phantom Black",
+    name: "Triumph Speed 400 — 2025 Edition",
     badge: "Best Seller",
     rating: 4.8,
     reviews: "2,417",
@@ -21,7 +21,7 @@ export const MODELS = [
   {
     id: "scrambler-400X",
     brand: "Triumph Motorcycles",
-    name: "Triumph Scrambler 400X — 2025 Edition, Phantom Black",
+    name: "Triumph Scrambler 400X — 2025 Edition",
     badge: "Best adventure in segment",
     rating: 4.8,
     reviews: "1,890",
