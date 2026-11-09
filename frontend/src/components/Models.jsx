@@ -113,7 +113,7 @@ function Models({ onTestRide, onSelect }) {
     <section className="models-section" id="models">
       <div className="models-section__header">
         <span className="models-section__eyebrow">Our Models</span>
-        <h2 className="models-section__title">Ride The Legend</h2>
+        <h2 className="models-section__title">Ride The class</h2>
       </div>
 
       <div className="models-section__grid">
