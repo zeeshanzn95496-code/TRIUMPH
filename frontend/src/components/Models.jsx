@@ -17,6 +17,21 @@ export const MODELS = [
     image:
       "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
   },
+  {
+    id: "speed-400",
+    brand: "Triumph Motorcycles",
+    name: "Triumph Speed 400 — 2025 Edition, Phantom Black",
+    badge: "Best Seller",
+    rating: 4.8,
+    reviews: "2,417",
+    price: "$5,495",
+    mrp: "$6,200",
+    discount: "11% off",
+    emi: "EMI from $229/mo",
+    tag: "398cc Single • 40 PS • 6-Speed • ABS",
+    image:
+      "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 function Stars({ rating }) {
