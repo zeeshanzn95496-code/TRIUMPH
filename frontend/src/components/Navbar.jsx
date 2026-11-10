@@ -1,22 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import "./Navbar.css";
+import logo from "./images/triumph-motorcycles-seeklogo.png";
 
 // Official-style Authentic Triumph Motorcycles Vector Logo
 function TriumphLogo() {
   return (
     <div className="flex items-center gap-3.5 select-none">
-      {/* Iconic Triangle Tank Badge */}
-      <svg
-        viewBox="0 0 40 36"
-        className="w-8 h-7 sm:w-9 sm:h-8 text-white transition-transform duration-300 group-hover:scale-105"
-        fill="currentColor"
-        aria-hidden="true"
-      >
-        <path d="M20 35 L1 3 C1 3 10 1 20 1 C30 1 39 3 39 3 Z" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
-        <path d="M20 30 L5 6 C5 6 12 4.5 20 4.5 C28 4.5 35 6 35 6 Z" fill="currentColor" fillOpacity="0.15" />
-        <path d="M14 11 L26 11 M20 11 L20 25" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      </svg>
+      <img src={logo} alt="triumph logo" className="h-8 w-auto object-contain"/>
 
       {/* Triumph Wordmark with authentic typography */}
       <div className="flex flex-col">
@@ -57,7 +48,7 @@ function Navbar({ onOpenTestRide, onNavigate }) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#090a0d]/95 backdrop-blur-md border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-4 sm:py-5"
+          ? "bg-[#090a0d]/95 backdrop-blur-md border-b border-white shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-4 sm:py-5"
           : "bg-gradient-to-b from-black/90 via-[#0b0c10]/70 to-transparent backdrop-blur-sm border-b border-white/[0.04] py-6 sm:py-7"
       }`}
     >
@@ -149,7 +140,7 @@ function Navbar({ onOpenTestRide, onNavigate }) {
                 className="w-full py-3 rounded-full bg-white text-black font-extrabold text-xs tracking-[0.16em] uppercase flex items-center justify-center gap-2 cursor-pointer shadow-lg"
               >
                 <span>Book Test Ride</span>
-                <ArrowUpRight size={15} />
+                <ArrowUpRight size={25} />
               </button>
             </div>
 
