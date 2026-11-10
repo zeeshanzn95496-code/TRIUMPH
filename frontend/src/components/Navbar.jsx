@@ -6,8 +6,8 @@ import logo from "./images/triumph-motorcycles-seeklogo.png";
 // Official-style Authentic Triumph Motorcycles Vector Logo
 function TriumphLogo() {
   return (
-    <div className="flex items-center gap-3.5 select-none">
-      <img src={logo} alt="triumph logo" className="h-8 w-auto object-contain"/>
+    <div className="flex items-center gap-5 select-none">
+      <img src={logo} alt="triumph logo" className="h-14 w-auto object-contain "/>
 
       {/* Triumph Wordmark with authentic typography */}
       <div className="flex flex-col">
@@ -46,10 +46,10 @@ function Navbar({ onOpenTestRide, onNavigate }) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20  ${
         isScrolled
           ? "bg-[#090a0d]/95 backdrop-blur-md border-b border-white shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-4 sm:py-5"
-          : "bg-gradient-to-b from-black/90 via-[#0b0c10]/70 to-transparent backdrop-blur-sm border-b border-white/[0.04] py-6 sm:py-7"
+          : " from-black/90 via-[#0b0c10]/70 to-transparent backdrop-blur-sm border-b border-white/[0.04] py-6 sm:py-7"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -65,19 +65,19 @@ function Navbar({ onOpenTestRide, onNavigate }) {
         <div className="hidden md:flex items-center gap-8 lg:gap-11">
           <button onClick={() => handleNav("home")} className={linkClass}>
             Home
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 w-0 h-2px bg-white transition-all duration-300 group-hover:w-full" />
           </button>
           <button onClick={() => handleNav("about")} className={linkClass}>
             About
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 w-0 h-2px bg-white transition-all duration-300 group-hover:w-full" />
           </button>
           <button onClick={() => handleNav("models")} className={linkClass}>
             Models
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 w-0 h-2px bg-white transition-all duration-300 group-hover:w-full" />
           </button>
           <button onClick={() => handleNav("contact")} className={linkClass}>
             Contact
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 w-0 h-2px bg-white transition-all duration-300 group-hover:w-full" />
           </button>
         </div>
 
