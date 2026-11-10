@@ -12,7 +12,6 @@ html {
 
 body {
   background: #0b0b0d;
-  
   color: #e8e6e1;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -33,7 +32,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #c9a962;
 }
-
 /* Shimmer & Glow Utilities */
 .gold-glow {
   filter: drop-shadow(0 0 16px rgba(201, 169, 98, 0.3));
