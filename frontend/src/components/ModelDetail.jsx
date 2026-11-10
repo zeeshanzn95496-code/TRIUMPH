@@ -46,6 +46,50 @@ const DETAIL_SPECS = {
       "110/70 R17 front and 150/60 R17 rear tyres",
     ],
   },
+   "scrambler-400X": {
+    detailedSpecs: [
+      {
+        category: "Engine & Transmission",
+        items: [
+          { label: "Type", val: "Liquid-cooled, 4-valve, DOHC single-cylinder" },
+          { label: "Capacity", val: "398.15 cc" },
+          { label: "Bore x Stroke", val: "89.0 mm x 64.0 mm" },
+          { label: "Compression", val: "12:1" },
+          { label: "Fuel System", val: "Bosch EFI with ride-by-wire throttle" },
+          { label: "Exhaust", val: "Stainless twin-skin header with steel silencer" },
+          { label: "Final Drive", val: "X-ring chain" },
+          { label: "Clutch", val: "Wet, multi-plate, slip & assist" },
+          { label: "Gearbox", val: "6-speed" },
+        ],
+      },
+      {
+        category: "Chassis & Dimensions",
+        items: [
+          { label: "Frame", val: "Hybrid spine/perimeter tubular steel" },
+          { label: "Front Wheel", val: "Cast aluminium 17 x 3 in" },
+          { label: "Rear Wheel", val: "Cast aluminium 17 x 4 in" },
+          { label: "Front Suspension", val: "43mm upside-down Big Piston forks, 140mm travel" },
+          { label: "Rear Suspension", val: "Gas monoshock RSU, preload adjustable, 130mm travel" },
+          { label: "Front Brakes", val: "300mm fixed disc, 4-piston radial caliper, ABS" },
+          { label: "Rear Brakes", val: "230mm fixed disc, floating caliper, ABS" },
+          { label: "Seat Height", val: "790 mm" },
+          { label: "Wheelbase", val: "1,377 mm" },
+          { label: "Fuel Capacity", val: "13 Litres" },
+          { label: "Wet Weight", val: "170 kg" },
+        ],
+      },
+    ],
+    equipment: [
+      "Analogue speedometer with integrated multi-function LCD screen",
+      "Switchable traction control",
+      "Ride-by-wire electronic throttle",
+      "Wet multi-plate slip & assist clutch",
+      "Dual-channel ABS with 300mm front disc",
+      "LED headlamp",
+      "17-inch cast alloy wheels with tubeless tyres",
+      "110/70 R17 front and 150/60 R17 rear tyres",
+    ],
+  },
 };
 
 function Stars({ rating }) {
