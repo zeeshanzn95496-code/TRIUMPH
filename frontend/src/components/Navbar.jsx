@@ -114,19 +114,19 @@ function Navbar({ onOpenTestRide, onNavigate }) {
             </button>
             <button
               onClick={() => handleNav("about")}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/0.06 text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               About
             </button>
             <button
               onClick={() => handleNav("models")}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white0.06 text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               Models
             </button>
             <button
               onClick={() => handleNav("contact")}
-              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/[0.06] text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
+              className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-200 hover:text-white py-2 border-b border-white/0.06 text-left bg-transparent border-x-0 border-t-0 cursor-pointer"
             >
               Contact
             </button>
@@ -144,7 +144,7 @@ function Navbar({ onOpenTestRide, onNavigate }) {
               </button>
             </div>
 
-            <div className="pt-4 mt-2 border-t border-white/[0.08] flex items-center justify-between text-xs text-zinc-400">
+            <div className="pt-4 mt-2 border-t border-white/0.08 flex items-center justify-between text-xs text-zinc-400">
               <span className="flex items-center gap-1.5">
                 <Phone size={13} className="text-zinc-300" />
                 1-800-555-TRIUMPH
