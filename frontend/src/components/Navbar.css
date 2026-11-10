@@ -5,7 +5,24 @@
  align-items: center;
  justify-content: space-between;
  padding: 0 2rem;
+ background: transparent;
+ background-color: transparent;
 }
 .logo{
   margin-top: 5%;
 }
+.triumph{
+   background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    rgba(0, 0, 0, 0.317) 25%,
+    rgba(0, 0, 0, 0.317) 50%,
+    rgba(0, 0, 0, 0.317) 75%,
+    #ffffff 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: about-gradient-slide 4s linear infinite;
+};
