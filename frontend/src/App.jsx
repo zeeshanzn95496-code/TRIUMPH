@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
 import ModelDetail from "./components/ModelDetail";
@@ -158,24 +158,6 @@ const FLAGSHIP = {
     "110/70 R17 front and 150/60 R17 rear tyres",
   ],
 };
-const [soundActive, setSoundActive] = useState(false);
-
-const audioRef = useRef(null);
-
-const toggleExhaustSound = () => {
-  if (!audioRef.current) return;
-
-  if (soundActive) {
-    audioRef.current.pause();
-    audioRef.current.currentTime = 0;
-    setSoundActive(false);
-  } else {
-    audioRef.current.play()
-      .then(() => setSoundActive(true))
-      .catch((error) => console.log("Audio error:", error));
-  }
-};
-
 function App() {
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("specs");
@@ -184,6 +166,21 @@ function App() {
   const [soundActive, setSoundActive] = useState(false);
   const [page, setPage] = useState("home");
   const [selectedModel, setSelectedModel] = useState(null);
+  const audioRef = useRef(null);
+
+  const toggleExhaustSound = () => {
+    if (!audioRef.current) return;
+
+    if (soundActive) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setSoundActive(false);
+    } else {
+      audioRef.current.play()
+        .then(() => setSoundActive(true))
+        .catch((error) => console.log("Audio error:", error));
+    }
+  };
 
   const currentColor = FLAGSHIP.colors[selectedColorIndex];
 
@@ -288,9 +285,9 @@ function App() {
                     {FLAGSHIP.price}
                   </span>
                 </div>
-               <audio 
+               <audio
                ref={audioRef}
-               src="/audio/rocketgt.wav"
+               src={audio}
                loop
                />
     
