@@ -416,7 +416,7 @@ function App() {
                 <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-1">
                   Technical Blueprint
                 </span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+                <h2 className=" speed400 text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
                   Speed 400 Anatomy
                 </h2>
               </div>
