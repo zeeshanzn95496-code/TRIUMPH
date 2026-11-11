@@ -13,7 +13,7 @@ function About() {
           </span>
         </h1>
 
-        <p className="about-page__subtitle">
+        <p className=" extra about-page__subtitle">
           Something extraordinary is coming soon. Our digital showroom is being
           crafted with the same obsession for detail as our motorcycles.
         </p>

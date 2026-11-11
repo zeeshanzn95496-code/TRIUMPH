@@ -53,18 +53,30 @@
 
 .about-page__title-line--gradient {
   background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #febd69 25%,
-    #ffd814 50%,
-    #febd69 75%,
-    #ffffff 100%
+    45deg,
+    #495057 0%,
+    #ced4da 25%,
+    #ced4da 50%,
+    #ced4da 75%,
+    #495057 100%
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: about-gradient-slide 4s linear infinite;
+}
+.extra{
+  background-image: linear-gradient(18deg, #ff7e5f 0%, #feb47b 33%, #6a11cb 66%, #2575fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+  /* Optional sizing and layout */
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 @keyframes about-gradient-slide {
