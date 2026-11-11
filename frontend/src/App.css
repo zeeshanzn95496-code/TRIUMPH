@@ -49,9 +49,28 @@ body {
   border: 1px solid rgba(201, 169, 98, 0.35);
   color: #e6cf9a;
 }
+.title{
+   text-transform: uppercase;
+  font-weight: 800;
+   background: linear-gradient(
+        90deg, 
+        #9ca3af 0%,
+        #d4af37 15%,
+        #ffffff 25%, 
+        #d4af37 50%, 
+        #ffffff 75%, 
+        #d4af37 85%,
+        #9ca3af 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 2s linear infinite;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
 .speed400{
-
   text-transform: uppercase;
   font-weight: 800;
    background: linear-gradient(
@@ -71,6 +90,26 @@ body {
     animation: textShimmer 2s linear infinite;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
+}
+.built{
+text-transform: uppercase;
+  font-weight: 800;
+   background: linear-gradient(
+        90deg, 
+        #9ca3af 0%,
+        #d4af37 15%,
+        #ffffff 25%, 
+        #d4af37 50%, 
+        #ffffff 75%, 
+        #d4af37 85%,
+        #9ca3af 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 2s linear infinite;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 @keyframes textShimmer {
     to {

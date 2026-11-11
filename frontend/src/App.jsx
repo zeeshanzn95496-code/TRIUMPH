@@ -6,6 +6,7 @@ import About from "./components/About";
 import rocket3gt from "./components/images/rocket3gt.jpg";
 import rocket3gtblack from "./components/images/rocket3gtblack.avif";
 import rocket3gtsilver from "./components/images/rocket3gtsilver.jpg";
+import audio from "./components/audio/rocketgt.wav";
 import {
   Gauge,
   Zap,
@@ -157,6 +158,23 @@ const FLAGSHIP = {
     "110/70 R17 front and 150/60 R17 rear tyres",
   ],
 };
+const [soundActive, setSoundActive] = useState(false);
+
+const audioRef = useRef(null);
+
+const toggleExhaustSound = () => {
+  if (!audioRef.current) return;
+
+  if (soundActive) {
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
+    setSoundActive(false);
+  } else {
+    audioRef.current.play()
+      .then(() => setSoundActive(true))
+      .catch((error) => console.log("Audio error:", error));
+  }
+};
 
 function App() {
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
@@ -241,7 +259,7 @@ function App() {
                 LARGEST IN THE WORLD
                 <span className="text-zinc-400 font-light">2500</span>
               </h2>
-              <h1 className=" gap-3 text-4xl sm:text-6xl md:text-7xl text-left lg:text-8xl font-black tracking-tight uppercase leading-none text-white">
+              <h1 className="title gap-3 text-4xl sm:text-6xl md:text-7xl text-left lg:text-8xl font-black tracking-tight uppercase leading-none text-white">
                 rocket3gt <span className="text-zinc-400 font-light"></span>
               </h1>
               <p className="text-xs gap-2 sm:text-sm md:text-base font-medium tracking-[0.16em] uppercase text-zinc-400 mt-2 sm:mt-3 ">
@@ -270,13 +288,19 @@ function App() {
                     {FLAGSHIP.price}
                   </span>
                 </div>
-
+               <audio 
+               ref={audioRef}
+               src="/audio/rocketgt.wav"
+               loop
+               />
+    
                 {/* Exhaust Audio Sim */}
                 <button
-                  onClick={() => setSoundActive(!soundActive)}
+                  onClick={toggleExhaustSound}
                   className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg border border-white/10 text-[11px] font-semibold text-zinc-300 hover:text-white transition-colors cursor-pointer"
-                >
+                  >
                   {soundActive ? (
+                  
                     <Volume2 size={20} className="text-red-500 animate-pulse" />
                   ) : (
                     <VolumeX size={15} />
@@ -370,7 +394,7 @@ function App() {
               <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-2">
                 Engineering Superiority
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+              <h2 className=" built text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
                 Built Without Compromise
               </h2>
               <p className="text-xs sm:text-sm md:text-base text-zinc-400 mt-4 leading-relaxed">
@@ -567,7 +591,7 @@ function App() {
                       Full Name
                     </label>
                     <input
-                      type="text"
+                      type="text" 
                       required
                       placeholder="Alex Morgan"
                       className="w-full bg-[#090a0d] border border-white/10 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
