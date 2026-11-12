@@ -26,9 +26,9 @@ import {
 // Single Flagship Model: Triumph Speed 400
 
 const FLAGSHIP = {
-  name: "Triumph Speed 400",
+  name: "Triumph rocket3gt",
   tagline: "The Definitive Modern Classic Roadster",
-  edition: "2025 Edition • Hinckley, UK",
+
   price: "$28,999",
   msrpNote: "MSRP Starting from • Flexible Financing from 2.99% APR",
   description:
@@ -247,10 +247,7 @@ function App() {
 
             {/* Top Heritage Badge */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-[11px] font-semibold tracking-[0.2em] uppercase text-zinc-300 w-fit">
-                <Sparkles size={12} className="text-zinc-200" />
-                {FLAGSHIP.edition}
-              </div>
+             
             </div>
 
             {/* Title Header */}
