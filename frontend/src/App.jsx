@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { FallingLeaves } from "falling-leaves/react";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
 import ModelDetail from "./components/ModelDetail";
@@ -222,6 +223,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#07080a] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black">
+      <FallingLeaves
+        fullScreen
+        count={30}
+        shapes={["maple"]}
+        zIndex={1}
+      />
       {/* 1. Global Fixed Premium Navbar */}
       <Navbar
         onOpenTestRide={() => setIsTestRideModalOpen(true)}
