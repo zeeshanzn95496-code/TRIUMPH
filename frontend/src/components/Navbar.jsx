@@ -46,9 +46,9 @@ function Navbar({ onOpenTestRide, onNavigate }) {
 
   return (
     <nav
-      className={`bg-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 items-center ${
+      className={`bg-transparent top-0 left-0 right-0 z-50 transition-all duration-300 h-20 items-center ${
         isScrolled
-          ? "bg-[#090a0d]/95 backdrop-blur-md border-b border-white shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-4 sm:py-5"
+          ? "bg-[#090a0d]/95 backdrop-blur-md border-b border-amber-400 shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-4 sm:py-5"
           : " from-black/90 via-[#0b0c10]/70 to-transparent backdrop-blur-sm border-b border-white 0.04 py-6 sm:py-7"
       }`}
     >

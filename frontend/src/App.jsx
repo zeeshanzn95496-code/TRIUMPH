@@ -225,7 +225,7 @@ function App() {
     <div className="min-h-screen bg-[#07080a] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black">
       <FallingLeaves
         fullScreen
-        count={30}
+        count={80}
         shapes={["maple"]}
         zIndex={1}
       />
@@ -251,10 +251,6 @@ function App() {
                 <Sparkles size={12} className="text-zinc-200" />
                 {FLAGSHIP.edition}
               </div>
-
-              <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-zinc-500">
-                Handcrafted in England
-              </span>
             </div>
 
             {/* Title Header */}
