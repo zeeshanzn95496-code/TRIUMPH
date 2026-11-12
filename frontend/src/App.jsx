@@ -243,7 +243,7 @@ function App() {
             className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
           >
             {/* Subtle Ambient Radial Lighting */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] md:w-[900px] h-[300px] sm:h-[450px] bg-red-600/[0.04] sm:bg-white/[0.03] rounded-full blur-[100px] sm:blur-[160px] pointer-events-none" />
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] md:w-[900px] h-[300px] sm:h-[450px] bg-red-600/4 sm:bg-white/3 rounded-full blur-[100px] sm:blur-[160px] pointer-events-none" />
 
             {/* Top Heritage Badge */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
@@ -265,7 +265,7 @@ function App() {
             </div>
 
             {/* Motorcycle Cinematic Showcase */}
-            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.08] bg-[#0d0e13] shadow-[0_25px_60px_rgba(0,0,0,0.9)]">
+            <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/8 bg-[#0d0e13] shadow-[0_25px_60px_rgba(0,0,0,0.9)]">
               {/* Main Visual Image */}
               <div className="relative h-[250px] sm:h-[380px] md:h-[480px] lg:h-[540px] w-full overflow-hidden bg-zinc-950">
                 <img
@@ -311,7 +311,7 @@ function App() {
               </div>
 
               {/* Color Switcher Strip (Responsive & Touch-Friendly) */}
-              <div className="bg-[#0b0c10] border-t border-white/[0.06] p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="bg-[#0b0c10] border-t border-white/6 p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
                   <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-zinc-400">
                     Colorway:
@@ -362,9 +362,9 @@ function App() {
                 return (
                   <div
                     key={item.label}
-                    className="bg-[#0e0f14] border border-white/[0.06] hover:border-white/20 rounded-xl p-4 sm:p-5 transition-colors"
+                    className="bg-[#0e0f14] border border-white/6 hover:border-white/20 rounded-xl p-4 sm:p-5 transition-colors"
                   >
-                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-zinc-300 mb-3">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-white/4 border border-white/8 flex items-center justify-center text-zinc-300 mb-3">
                       <Icon size={18} />
                     </div>
                     <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-zinc-400 block mb-1">
@@ -385,7 +385,7 @@ function App() {
           {/* 3. Explore Section - Engineering Breakdown */}
           <section
             id="about"
-            className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.06]"
+            className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/6"
           >
             <div className="max-w-3xl mb-10 sm:mb-14">
               <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-2">
@@ -405,10 +405,10 @@ function App() {
                 return (
                   <div
                     key={pillar.title}
-                    className="p-6 sm:p-7 rounded-2xl bg-[#0e0f14] border border-white/[0.06] hover:border-white/25 transition-all flex flex-col justify-between"
+                    className="p-6 sm:p-7 rounded-2xl bg-[#0e0f14] border border-white/6 hover:border-white/25 transition-all flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white mb-5">
+                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-5">
                         <Icon size={20} />
                       </div>
                       <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-2">
@@ -430,7 +430,7 @@ function App() {
           {/* 4. Models Section - Full Specs & Features */}
           <section
             id="anatomy"
-            className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.06]"
+            className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/6"
           >
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
               <div>
@@ -443,7 +443,7 @@ function App() {
               </div>
 
               {/* Interactive Tab Switcher */}
-              <div className="inline-flex p-1 rounded-xl bg-white/[0.04] border border-white/10 self-start md:self-auto">
+              <div className="inline-flex p-1 rounded-xl bg-white/4 border border-white/10 self-start md:self-auto">
                 <button
                   onClick={() => setActiveTab("specs")}
                   className={`px-4 sm:px-6 py-2 rounded-lg text-xs font-bold tracking-[0.14em] uppercase transition-all cursor-pointer ${
@@ -473,12 +473,12 @@ function App() {
                 {FLAGSHIP.detailedSpecs.map((group) => (
                   <div
                     key={group.category}
-                    className="bg-[#0e0f14] rounded-2xl border border-white/[0.06] p-6 sm:p-8"
+                    className="bg-[#0e0f14] rounded-2xl border border-white/6 p-6 sm:p-8"
                   >
-                    <h3 className="text-sm font-bold tracking-[0.18em] uppercase text-zinc-300 pb-4 mb-4 border-b border-white/[0.08]">
+                    <h3 className="text-sm font-bold tracking-[0.18em] uppercase text-zinc-300 pb-4 mb-4 border-b border-white/8">
                       {group.category}
                     </h3>
-                    <div className="divide-y divide-white/[0.04]">
+                    <div className="divide-y divide-white/4">
                       {group.items.map((item) => (
                         <div
                           key={item.label}
@@ -504,7 +504,7 @@ function App() {
                 {FLAGSHIP.equipment.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 p-4 sm:p-5 rounded-xl bg-[#0e0f14] border border-white/[0.06] text-xs sm:text-sm text-zinc-200"
+                    className="flex items-center gap-3 p-4 sm:p-5 rounded-xl bg-[#0e0f14] border border-white/6 text-xs sm:text-sm text-zinc-200"
                   >
                     <CheckCircle2 size={16} className="text-white shrink-0" />
                     <span>{item}</span>
