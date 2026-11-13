@@ -27,7 +27,7 @@ import {
 // Single Flagship Model: Triumph Speed 400
 
 const FLAGSHIP = {
-  name: "Triumph rocket3gt",
+  name: "Triumph Rocket 3 GT",
   tagline: "The Definitive Modern Classic Roadster",
 
   price: "$28,999",
@@ -36,20 +36,20 @@ const FLAGSHIP = {
     "Born in Hinckley and built for today's originals. The Speed 400 pairs timeless classic styling with a punchy 398cc single-cylinder engine, confident chassis, and modern rider aids — pure freedom, distilled.",
   colors: [
     {
-      name: "BLOODY RED",
+      name: "Carnival Red",
       hex: "#991b1b",
       borderHex: "#ef4444",
       image: rocket3gt,
     },
     {
-      name: "devil's BLACK",
+      name: "Phantom Black",
       hex: "#161618",
       borderHex: "#44464f",
       image: rocket3gtblack,
     },
     {
-      name: "Silver GHOSTWHITE",
-      hex: "white",
+      name: "Silver Ice",
+      hex: "#d1d5db",
       borderHex: "#9ca3af",
       image: rocket3gtsilver,
     },
