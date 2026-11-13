@@ -21,6 +21,7 @@ import {
   Compass,
   Cpu,
   Layers,
+  MoveLeft,
 } from "lucide-react";
 
 // Single Flagship Model: Triumph Speed 400
@@ -149,7 +150,7 @@ const FLAGSHIP = {
     },
   ],
   equipment: [
-    "Analogue speedometer with integrated multi-function LCD screen",
+    "digital speedometer with integrated multi-function LCD screen",
     "Switchable traction control",
     "Ride-by-wire electronic throttle",
     "Wet multi-plate slip & assist clutch",
@@ -227,6 +228,9 @@ function App() {
         fullScreen
         count={80}
         shapes={["maple"]}
+        colors={['#d94e1f', '#f4a261', '#e9c46a']}
+         speed={1.5}
+         wind={0.5}
         zIndex={1}
       />
       {/* 1. Global Fixed Premium Navbar */}
