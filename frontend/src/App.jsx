@@ -255,13 +255,13 @@ function App() {
             </div>
 
             {/* Title Header */}
-            <div className="mb-2 sm:mb-4 text-center">
-              <h2 className=" mb-2 text-4xl sm:text-4xl md:text-3xl lg:text-3xl font-black tracking-tight uppercase leading-none text-white">
-                LARGEST IN THE WORLD
-                <span className="text-zinc-400 font-light">2500</span>
+            <div className="mb-4 sm:mb-4 text-center">
+              <h2 className=" mb-2 text-4xl sm:text-4xl md:text-3xl lg:text-3xl font-light tracking-tight uppercase leading-none text-white">
+                LARGEST IN THE WORLD{'    '}
+                <span className=" ml-3 text-zinc-400 font-light">2500</span>
               </h2>
-              <h1 className="title gap-3 text-4xl sm:text-6xl md:text-7xl text-left lg:text-8xl font-black tracking-tight uppercase leading-none text-white">
-                rocket3gt <span className="text-zinc-400 font-light"></span>
+              <h1 className="title gap-3 text-4xl sm:text-6xl md:text-7xl text-left lg:text-8xl font-light tracking-tight uppercase leading-none text-white">
+                ROCKET 3 <span className="text-zinc-400 font-light">GT</span>
               </h1>
               <p className="text-xs gap-2 sm:text-sm md:text-base font-medium tracking-[0.16em] uppercase text-zinc-400 mt-2 sm:mt-3 ">
                 {FLAGSHIP.tagline}
@@ -271,7 +271,7 @@ function App() {
             {/* Motorcycle Cinematic Showcase */}
             <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/8 bg-[#0d0e13] shadow-[0_25px_60px_rgba(0,0,0,0.9)]">
               {/* Main Visual Image */}
-              <div className="relative h-[250px] sm:h-[380px] md:h-[480px] lg:h-[540px] w-full overflow-hidden bg-zinc-950">
+              <div className="relative h-250px sm:h-380px md:h-[480px] lg:h-[540px] w-full overflow-hidden bg-zinc-950">
                 <img
                   src={currentColor.image}
                   alt={FLAGSHIP.name}

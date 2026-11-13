@@ -51,7 +51,6 @@ body {
 }
 .title{
    text-transform: uppercase;
-  font-weight: 800;
    background: linear-gradient(
         90deg, 
         #9ca3af 0%,
@@ -67,14 +66,14 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: textShimmer 2s linear infinite;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+   
 }
 
 .speed400{
   text-transform: uppercase;
   font-weight: 800;
    background: linear-gradient(
-        90deg, 
+        45deg, 
         #9ca3af 0%,
         #d4af37 15%,
         #ffffff 25%, 
@@ -88,14 +87,14 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: textShimmer 2s linear infinite;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+   
 
 }
 .built{
 text-transform: uppercase;
   font-weight: 800;
    background: linear-gradient(
-        90deg, 
+        45deg, 
         #9ca3af 0%,
         #d4af37 15%,
         #ffffff 25%, 
@@ -109,7 +108,7 @@ text-transform: uppercase;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: textShimmer 2s linear infinite;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+   
 }
 @keyframes textShimmer {
     to {
