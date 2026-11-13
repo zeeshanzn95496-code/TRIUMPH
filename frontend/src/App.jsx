@@ -395,7 +395,7 @@ function App() {
               <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-2">
                 Engineering Superiority
               </span>
-              <h2 className=" built text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+              <h2 className=" built text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight text-white">
                 Built Without Compromise
               </h2>
               <p className="text-xs sm:text-sm md:text-base text-zinc-400 mt-4 leading-relaxed">
@@ -441,7 +441,7 @@ function App() {
                 <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 block mb-1">
                   Technical Blueprint
                 </span>
-                <h2 className=" speed400 text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+                <h2 className=" speed400 text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight text-white">
                   Speed 400 Anatomy
                 </h2>
               </div>

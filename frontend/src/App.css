@@ -71,7 +71,6 @@ body {
 
 .speed400{
   text-transform: uppercase;
-  font-weight: 800;
    background: linear-gradient(
         45deg, 
         #9ca3af 0%,
@@ -92,7 +91,6 @@ body {
 }
 .built{
 text-transform: uppercase;
-  font-weight: 800;
    background: linear-gradient(
         45deg, 
         #9ca3af 0%,
