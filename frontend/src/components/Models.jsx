@@ -1,4 +1,4 @@
-import { Star, StarHalf, Truck, BadgeCheck, ChevronRight } from "lucide-react";
+import { Star, StarHalf, Truck, BadgeCheck, ChevronRight, ArrowLeft } from "lucide-react";
 import "./Models.css";
 import scramblerImg from"./images/scrambler.jpg";
 import speed400 from"./images/speed400.webp"
@@ -108,9 +108,18 @@ function ProductCard({ model, onTestRide, onSelect }) {
   );
 }
 
-function Models({ onTestRide, onSelect }) {
+function Models({ onTestRide, onSelect, onBack }) {
   return (
     <section className="models-section" id="models">
+      {onBack && (
+        <div className="models-section__topbar">
+          <button className="models-section__back" onClick={onBack}>
+            <ArrowLeft size={16} />
+            Back to Home
+          </button>
+        </div>
+      )}
+
       <div className="models-section__header">
         <span className="models-section__eyebrow">Our Models</span>
         <h2 className="models-section__title">Ride The class</h2>

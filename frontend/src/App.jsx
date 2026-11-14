@@ -521,6 +521,7 @@ function App() {
           <Models
             onTestRide={() => setIsTestRideModalOpen(true)}
             onSelect={openModel}
+            onBack={() => navigate("home")}
           />
         </div>
       )}
