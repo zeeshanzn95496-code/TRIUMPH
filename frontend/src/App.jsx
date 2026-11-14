@@ -24,16 +24,16 @@ import {
   MoveLeft,
 } from "lucide-react";
 
-// Single Flagship Model: Triumph Speed 400
+// Single Flagship Model: Triumph Rocket 3 GT
 
 const FLAGSHIP = {
   name: "Triumph Rocket 3 GT",
-  tagline: "The Definitive Modern Classic Roadster",
+  tagline: "The World's Largest Production Motorcycle Engine",
 
   price: "$28,999",
   msrpNote: "MSRP Starting from • Flexible Financing from 2.99% APR",
   description:
-    "Born in Hinckley and built for today's originals. The Speed 400 pairs timeless classic styling with a punchy 398cc single-cylinder engine, confident chassis, and modern rider aids — pure freedom, distilled.",
+    "An engineering icon with monumental road presence. Powered by a record-breaking 2,458cc triple engine, the Rocket 3 GT delivers unprecedented torque, peerless cruising acceleration, and bespoke British craftsmanship.",
   colors: [
     {
       name: "Carnival Red",
@@ -57,20 +57,20 @@ const FLAGSHIP = {
   specs: [
     {
       label: "Displacement",
-      value: "2458 cc",
+      value: "2,458 cc",
       detail: "3-Cylinder DOHC",
       icon: Gauge,
     },
     {
       label: "Max Power",
-      value: "165 bhp PS",
+      value: "165 HP",
       detail: "@ 6,000 RPM",
       icon: Zap,
     },
     {
       label: "Peak Torque",
       value: "221 Nm",
-      detail: "@ 4,000 RPM",
+      detail: "@ 4,000 RPM (World Record)",
       icon: Flame,
     },
     {
@@ -83,81 +83,76 @@ const FLAGSHIP = {
   pillars: [
     {
       icon: Compass,
-      title: "2458cc DOHC 3-cyclinder",
-      desc: "A short-stroke, liquid-cooled unit with a twin-skin header that delivers crisp throttle response and an addictive exhaust note.",
+      title: "2.5L High-Output Triple",
+      desc: "Massive low-end grunt combined with a soaring top end, delivering a spine-tingling acoustic soundtrack.",
     },
     {
       icon: Shield,
-      title: "Plant-Your-Feet Braking",
-      desc: "A 300mm front disc with four-piston radial caliper and dual-channel ABS gives confident, progressive stopping power.",
+      title: "Brembo Stylema® Brakes",
+      desc: "Top-tier monobloc superbike calipers with twin 320mm discs for instant, effortless stopping power.",
     },
     {
       icon: Layers,
-      title: "Big Piston Forks",
-      desc: "43mm upside-down Big Piston forks and a gas monoshock with preload adjust are tuned for a plush, planted ride.",
+      title: "Showa Fully-Adjustable",
+      desc: "47mm inverted Showa cartridge front forks and piggyback reservoir rear monoshock tuned for plush touring.",
     },
     {
       icon: Cpu,
-      title: "Modern Rider Aids",
-      desc: "Switchable traction control, ride-by-wire throttle and a slip-and-assist clutch keep things sharp in any condition.",
+      title: "Optimized Cornering ABS",
+      desc: "State-of-the-art Inertial Measurement Unit (IMU) continuously optimizes braking and traction control.",
     },
   ],
   detailedSpecs: [
     {
       category: "Engine & Transmission",
       items: [
-        { label: "Type", val: "Liquid-cooled, 4-valve, DOHC single-cylinder" },
-        { label: "Capacity", val: "398.15 cc" },
-        { label: "Bore x Stroke", val: "89.0 mm x 64.0 mm" },
-        { label: "Compression", val: "12:1" },
-        { label: "Fuel System", val: "Bosch EFI with ride-by-wire throttle" },
-        {
-          label: "Exhaust",
-          val: "Stainless twin-skin header with steel silencer",
-        },
-        { label: "Final Drive", val: "X-ring chain" },
-        { label: "Clutch", val: "Wet, multi-plate, slip & assist" },
-        { label: "Gearbox", val: "6-speed" },
+        { label: "Type", val: "Liquid-cooled, 12 valve, DOHC, inline 3-cylinder" },
+        { label: "Capacity", val: "2,458 cc" },
+        { label: "Bore x Stroke", val: "110.2 mm x 85.9 mm" },
+        { label: "Compression", val: "10.8:1" },
+        { label: "Exhaust", val: "Stainless 3-into-1 headers with arrow silencers" },
+        { label: "Final Drive", val: "Shaft drive with bevel box" },
+        { label: "Clutch", val: "Wet, multi-plate torque assist, hydraulic" },
+        { label: "Gearbox", val: "6-speed helical gear train" },
       ],
     },
     {
       category: "Chassis & Dimensions",
       items: [
-        { label: "Frame", val: "Hybrid spine/perimeter tubular steel" },
-        { label: "Front Wheel", val: "Cast aluminium 17 x 3 in" },
-        { label: "Rear Wheel", val: "Cast aluminium 17 x 4 in" },
+        { label: "Frame", val: "Full aluminium spine structure" },
+        { label: "Front Wheel", val: "Cast aluminium 17 x 3.5 in" },
+        { label: "Rear Wheel", val: "Cast aluminium 16 x 7.5 in" },
         {
           label: "Front Suspension",
-          val: "43mm upside-down Big Piston forks, 140mm travel",
+          val: "Showa 47mm upside-down 1-way adjustable",
         },
         {
           label: "Rear Suspension",
-          val: "Gas monoshock RSU, preload adjustable, 130mm travel",
+          val: "Fully adjustable Showa piggyback monoshock",
         },
         {
-          label: "Front Brakes",
-          val: "300mm fixed disc, 4-piston radial caliper, ABS",
+          label: "Fuel Capacity",
+          val: "18.0 Litres (4.75 US gal)",
         },
+        { label: "Seat Height", val: "750 mm (29.5 in)" },
         {
-          label: "Rear Brakes",
-          val: "230mm fixed disc, floating caliper, ABS",
+          label: "Dry Weight",
+          val: "291 kg (optimized mass centralization)",
         },
-        { label: "Seat Height", val: "790 mm" },
-        { label: "Wheelbase", val: "1,377 mm" },
-        { label: "Fuel Capacity", val: "13 Litres" },
-        { label: "Wet Weight", val: "170 kg" },
       ],
     },
   ],
   equipment: [
-    "digital speedometer with integrated multi-function LCD screen",
-    "Switchable traction control",
-    "Ride-by-wire electronic throttle",
-    "Wet multi-plate slip & assist clutch",
-    "Dual-channel ABS with 300mm front disc",
-    "LED headlamp",
-    "17-inch cast alloy wheels with tubeless tyres",
-    "110/70 R17 front and 150/60 R17 rear tyres",
+    "Full-colour 2nd Generation TFT Instrument Display",
+    "4 Selectable Riding Modes: Road, Rain, Sport, Rider-Configurable",
+    "Triumph Shift Assist (Up & Down Quickshifter)",
+    "Hill Hold Control with automatic gradient detection",
+    "One-touch Electronic Cruise Control",
+    "Keyless Ignition & Electronic Steering Lock",
+    "All-LED Headlights with Signature Daytime Running Light (DRL)",
+    "Heated Grips with 2 selectable warmth levels",
+    "Under-seat USB charging socket with phone compartment",
+    "Sculpted two-piece touring saddle with brushed alloy backrest",
   ],
 };
 function App() {
@@ -309,7 +304,7 @@ function App() {
                   )}
                   <span className="hidden sm:inline">
                     {soundActive
-                      ? "Twin Exhaust Active"
+                      ? "Exhaust Active"
                       : "Simulate Exhaust Audio"}
                   </span>
                 </button>
@@ -443,7 +438,7 @@ function App() {
                   Technical Blueprint
                 </span>
                 <h2 className=" speed400 text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight text-white">
-                  Speed 400 Anatomy
+                  Rocket 3 GT Anatomy
                 </h2>
               </div>
 
