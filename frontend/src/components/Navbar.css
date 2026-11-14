@@ -15,9 +15,9 @@
    background: linear-gradient(
     45deg,
     #ffffff 0%,
-    rgba(0, 0, 0, 0.317) 25%,
-    rgba(0, 0, 0, 0.317) 50%,
-    rgba(0, 0, 0, 0.317) 75%,
+    rgb(0, 0, 0) 25%,
+    rgb(0, 0, 0) 50%,
+    rgb(0, 0, 0) 75%,
     #ffffff 100%
   );
   background-size: 300% 100%;

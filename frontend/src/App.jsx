@@ -237,6 +237,7 @@ function App() {
       <Navbar
         onOpenTestRide={() => setIsTestRideModalOpen(true)}
         onNavigate={navigate}
+        currentPage={page}
       />
 
       {page === "home" && (
