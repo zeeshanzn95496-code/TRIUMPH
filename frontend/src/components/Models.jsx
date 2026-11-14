@@ -29,7 +29,7 @@ export const MODELS = [
     mrp: "$6,700",
     discount: "13% off",
     emi: "EMI from $260/mo",
-    tag: "398cc Single • 40 PS • 6-Speed • switchable-ABS",
+    tag: "398cc Single • 40 PS • 19\"/17\" Wheels • ABS",
     image:scramblerImg,
   },
 ];
