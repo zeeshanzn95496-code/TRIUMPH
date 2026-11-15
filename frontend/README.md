@@ -1,16 +1,26 @@
-# React + Vite
+# Frontend — Triumph Vehicle Showroom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 19 + Vite 8 + Tailwind CSS v4 SPA.
 
-Currently, two official plugins are available:
+## Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm run dev       # dev server (default http://localhost:5173)
+npm run build     # production build → dist/
+npm run lint      # ESLint
+npm run preview   # serve production build
+```
 
-## React Compiler
+## Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `index.html` — entry HTML
+- `src/Main.jsx` — React root + Lenis smooth-scroll setup
+- `src/App.jsx` — page state router (`home` / `about` / `models` / `model`), FLAGSHIP data, test-ride modal
+- `src/App.css` — Tailwind import + global styles + gold shimmer utilities
+- `src/components/` — Navbar, Models (cards), ModelDetail, About
 
-## Expanding the ESLint configuration
+## Conventions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Styling: Tailwind utility classes; dedicated `.css` file per component for complex sections
+- Images/audio live in `src/components/images|audio` and are imported (Vite bundles them)
+- New models: add to `MODELS` in `Models.jsx` **and** `DETAIL_SPECS` in `ModelDetail.jsx`
