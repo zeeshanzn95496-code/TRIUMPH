@@ -181,6 +181,11 @@ function App() {
 
   const currentColor = FLAGSHIP.colors[selectedColorIndex];
 
+  const modelTitle = FLAGSHIP.name.replace(/^Triumph\s+/i, "");
+  const titleParts = modelTitle.split(" ");
+  const titleMain = titleParts.slice(0, -1).join(" ");
+  const titleAccent = titleParts[titleParts.length - 1];
+
   const openModel = (model) => {
     setSelectedModel(model);
     setPage("model");
@@ -257,7 +262,8 @@ function App() {
                 <span className=" ml-3 text-zinc-400 font-light">2500</span>
               </h2>
               <h1 className="title gap-3 text-4xl sm:text-6xl md:text-7xl text-left lg:text-8xl font-light tracking-tight uppercase leading-none text-white">
-                ROCKET 3 <span className="text-zinc-400 font-light">GT</span>
+                {titleMain}{" "}
+                <span className="text-zinc-400 font-light">{titleAccent}</span>
               </h1>
               <p className="text-xs gap-2 sm:text-sm md:text-base font-medium tracking-[0.16em] uppercase text-zinc-400 mt-2 sm:mt-3 ">
                 {FLAGSHIP.tagline}
@@ -438,7 +444,7 @@ function App() {
                   Technical Blueprint
                 </span>
                 <h2 className=" speed400 text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight text-white">
-                  Rocket 3 GT Anatomy
+                  {modelTitle} Anatomy
                 </h2>
               </div>
 
