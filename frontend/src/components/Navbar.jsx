@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import "./Navbar.css";
 import logo from "./images/triumph-motorcycles-seeklogo.png";
@@ -30,13 +30,25 @@ const linkClass =
 
 function Navbar({ onOpenTestRide, onNavigate, currentPage = "home" }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const y = window.scrollY;
+      setIsScrolled(y > 20);
+
+      if (y < 80) {
+        setHidden(false);
+      } else if (y > lastScrollY.current + 4) {
+        setHidden(true);
+      } else if (y < lastScrollY.current - 4) {
+        setHidden(false);
+      }
+      lastScrollY.current = y;
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -68,6 +80,8 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home" }) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
         isScrolled
           ? "bg-[#090a0d]/95 backdrop-blur-md border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
           : "bg-gradient-to-b from-black/90 via-[#0b0c10]/70 to-transparent backdrop-blur-sm border-b border-white/4"
