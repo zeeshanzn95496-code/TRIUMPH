@@ -135,18 +135,24 @@ function ModelDetail({ model, onBack, onTestRide }) {
           <span className="model-detail__brand">{model.brand}</span>
           <h1 className="model-detail__title">{model.name}</h1>
 
-          <div className="model-detail__rating">
-            <Stars rating={model.rating} />
-            <span className="model-detail__rating-value">{model.rating}</span>
-            <span className="model-detail__reviews">({model.reviews} reviews)</span>
-          </div>
+          {model.rating > 0 && (
+            <div className="model-detail__rating">
+              <Stars rating={model.rating} />
+              <span className="model-detail__rating-value">{model.rating}</span>
+              <span className="model-detail__reviews">({model.reviews} reviews)</span>
+            </div>
+          )}
 
           <p className="model-detail__tag">{model.tag}</p>
 
           <div className="model-detail__price-row">
             <span className="model-detail__price">{model.price}</span>
-            <span className="model-detail__mrp">{model.mrp}</span>
-            <span className="model-detail__discount">{model.discount}</span>
+            {model.mrp !== "—" && (
+              <span className="model-detail__mrp">{model.mrp}</span>
+            )}
+            {model.discount && (
+              <span className="model-detail__discount">{model.discount}</span>
+            )}
           </div>
           <p className="model-detail__emi">{model.emi}</p>
 
@@ -164,6 +170,7 @@ function ModelDetail({ model, onBack, onTestRide }) {
       </div>
 
       {/* Full Specifications */}
+      {detail.detailedSpecs.length > 0 && (
       <div className="model-detail__specs">
         <h2 className="model-detail__section-title">Full Specifications</h2>
         <div className="model-detail__spec-grid">
@@ -182,8 +189,10 @@ function ModelDetail({ model, onBack, onTestRide }) {
           ))}
         </div>
       </div>
+      )}
 
       {/* Standard Equipment */}
+      {detail.equipment.length > 0 && (
       <div className="model-detail__equipment">
         <h2 className="model-detail__section-title">Standard Equipment</h2>
         <div className="model-detail__equipment-grid">
@@ -195,6 +204,14 @@ function ModelDetail({ model, onBack, onTestRide }) {
           ))}
         </div>
       </div>
+      )}
+
+      {detail.detailedSpecs.length === 0 && detail.equipment.length === 0 && (
+        <p className="model-detail__coming-soon">
+          Full specifications for this model are coming soon. Book a test ride
+          to learn more.
+        </p>
+      )}
     </div>
   );
 }

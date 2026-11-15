@@ -1,4 +1,4 @@
-import { Star, StarHalf, Truck, BadgeCheck, ChevronRight, ArrowLeft } from "lucide-react";
+import { Star, StarHalf, Truck, BadgeCheck, ChevronRight, ArrowLeft, Bike } from "lucide-react";
 import "./Models.css";
 import scramblerImg from"./images/scrambler.jpg";
 import speed400 from"./images/speed400.webp"
@@ -32,6 +32,20 @@ export const MODELS = [
     tag: "398cc Single • 40 PS • 19\"/17\" Wheels • ABS",
     image:scramblerImg,
   },
+  {
+    id: "t4",
+    brand: "Triumph Motorcycles",
+    name: "Triumph T4",
+    badge: "Coming Soon",
+    rating: 0,
+    reviews: "0",
+    price: "—",
+    mrp: "—",
+    discount: "",
+    emi: "Details coming soon",
+    tag: "Specifications to be announced",
+    image: null,
+  },
 ];
 
 function Stars({ rating }) {
@@ -57,7 +71,13 @@ function ProductCard({ model, onTestRide, onSelect }) {
     >
       {/* Image */}
       <div className="model-card__image">
-        <img src={model.image} alt={model.name} />
+        {model.image ? (
+          <img src={model.image} alt={model.name} />
+        ) : (
+          <div className="model-card__placeholder">
+            <Bike size={64} strokeWidth={1} />
+          </div>
+        )}
         <span className="model-card__badge">{model.badge}</span>
       </div>
 
@@ -68,11 +88,13 @@ function ProductCard({ model, onTestRide, onSelect }) {
         <h3 className="model-card__title">{model.name}</h3>
 
         {/* Rating */}
-        <div className="model-card__rating">
-          <Stars rating={model.rating} />
-          <span className="model-card__rating-value">{model.rating}</span>
-          <span className="model-card__reviews">({model.reviews})</span>
-        </div>
+        {model.rating > 0 && (
+          <div className="model-card__rating">
+            <Stars rating={model.rating} />
+            <span className="model-card__rating-value">{model.rating}</span>
+            <span className="model-card__reviews">({model.reviews})</span>
+          </div>
+        )}
 
         {/* Specs tag */}
         <p className="model-card__tag">{model.tag}</p>
@@ -80,8 +102,12 @@ function ProductCard({ model, onTestRide, onSelect }) {
         {/* Price row */}
         <div className="model-card__price-row">
           <span className="model-card__price">{model.price}</span>
-          <span className="model-card__mrp">{model.mrp}</span>
-          <span className="model-card__discount">{model.discount}</span>
+          {model.mrp !== "—" && (
+            <span className="model-card__mrp">{model.mrp}</span>
+          )}
+          {model.discount && (
+            <span className="model-card__discount">{model.discount}</span>
+          )}
         </div>
         <p className="model-card__emi">{model.emi}</p>
 

@@ -341,6 +341,15 @@
   color: #e4e4e7;
 }
 
+.model-detail__coming-soon {
+  font-size: 14px;
+  color: #a1a1aa;
+  text-align: center;
+  padding: 3rem 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+}
+
 .model-detail__equipment-item svg {
   color: #ffffff;
   flex-shrink: 0;
