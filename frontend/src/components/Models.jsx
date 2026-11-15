@@ -44,7 +44,7 @@ export const MODELS = [
     discount: "13% off",
     emi: "EMI from $199/mo",
     tag: "398cc Single • 40 PS • 6-Speed • ABS",
-    image: null,
+    image: speed400,
   },
 ];
 
