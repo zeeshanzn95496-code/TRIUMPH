@@ -7,7 +7,6 @@ import About from "./components/About";
 import rocket3gt from "./components/images/rocket3gt.jpg";
 import rocket3gtblack from "./components/images/rocket3gtblack.avif";
 import rocket3gtsilver from "./components/images/rocket3gtsilver.jpg";
-import audio from "./components/audio/rocketgt.wav";
 import {
   Gauge,
   Zap,
@@ -294,8 +293,9 @@ function App() {
                 </div>
                <audio
                ref={audioRef}
-               src={audio}
+               src="/audio/rocketgt.wav"
                loop
+               preload="none"
                />
     
                 {/* Exhaust Audio Sim */}
