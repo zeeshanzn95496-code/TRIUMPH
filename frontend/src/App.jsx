@@ -240,6 +240,7 @@ function App() {
         currentPage={page}
       />
 
+      <div key={page} className="page-fade">
       {page === "home" && (
         <>
           {/* 2. Hero Section - Single Model Showcase */}
@@ -544,8 +545,9 @@ function App() {
           onTestRide={() => setIsTestRideModalOpen(true)}
         />
       )}
+      </div>
 
-      {/* 6. VIP Test Ride Booking Modal */}
+      {/* 6. VIP Test Ride Booking Modal */} 
       {isTestRideModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#101117] border border-white/10 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
