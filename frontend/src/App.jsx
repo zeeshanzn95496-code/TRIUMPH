@@ -227,7 +227,7 @@ function App() {
         fullScreen
         count={80}
         shapes={["maple"]}
-        colors={['#d94e1f', '#f4a261', '#e9c46a']}
+        colors={['#ffd814', '#febd69', '#ffffff']}
          speed={1.5}
          wind={0.5}
         zIndex={1}
