@@ -202,6 +202,11 @@ function App() {
       window.scrollTo({ top: 0 });
       return;
     }
+    if (dest === "contact") {
+      setPage("contact");
+      window.scrollTo({ top: 0 });
+      return;
+    }
     setPage("home");
     setTimeout(() => {
       if (dest && dest !== "home") {
@@ -542,6 +547,8 @@ function App() {
       )}
 
       {page === "about" && <About />}
+
+      {page === "contact" && <Contact />}
 
       {page === "model" && selectedModel && (
         <ModelDetail
