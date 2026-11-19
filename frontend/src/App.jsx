@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Models from "./components/Models";
 import ModelDetail from "./components/ModelDetail";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import rocket3gt from "./components/images/rocket3gt.jpg";
 import rocket3gtblack from "./components/images/rocket3gtblack.avif";
 import rocket3gtsilver from "./components/images/rocket3gtsilver.jpg";
