@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import Snowfall from "react-snowfall";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
@@ -24,6 +24,46 @@ import {
   MoveLeft,
   Fuel,
 } from "lucide-react";
+
+// Draws a 6-fold snowflake on a canvas so react-snowfall can use it as a flake image
+function createSnowflakeCanvas(color) {
+  const size = 96;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d");
+  const cx = size / 2;
+  const cy = size / 2;
+  const armLength = 38;
+
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2.5;
+  ctx.lineCap = "round";
+
+  const drawArm = (angle) => {
+    const dx = Math.cos(angle);
+    const dy = Math.sin(angle);
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + dx * armLength, cy + dy * armLength);
+    ctx.stroke();
+    [0.45, 0.7, 0.92].forEach((t) => {
+      const bx = cx + dx * armLength * t;
+      const by = cy + dy * armLength * t;
+      const branchLen = armLength * (1 - t) * 0.5;
+      [-0.65, 0.65].forEach((offset) => {
+        const ba = angle + offset;
+        ctx.beginPath();
+        ctx.moveTo(bx, by);
+        ctx.lineTo(bx + Math.cos(ba) * branchLen, by + Math.sin(ba) * branchLen);
+        ctx.stroke();
+      });
+    });
+  };
+
+  for (let i = 0; i < 6; i++) drawArm((Math.PI / 3) * i);
+  return canvas;
+}
 
 // Single Flagship Model: Triumph Rocket 3 GT
 
@@ -165,6 +205,10 @@ function App() {
   const [page, setPage] = useState("home");
   const [selectedModel, setSelectedModel] = useState(null);
   const audioRef = useRef(null);
+  const snowflakeImages = useMemo(
+    () => [createSnowflakeCanvas("#ffffff"), createSnowflakeCanvas("#bae6fd")],
+    []
+  );
 
   const toggleExhaustSound = () => {
     if (!audioRef.current) return;
@@ -232,11 +276,14 @@ function App() {
   return (
     <div className="min-h-screen bg-[#07080a] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black">
       <Snowfall
-        snowflakeCount={150}
-        color="rgba(255, 255, 255, 0.85)"
-        radius={[4,3.5]}
-        speed={[3,3]}
-        wind={[-2.5, 1]}
+        snowflakeCount={120}
+        images={snowflakeImages}
+        radius={[7, 16]}
+        speed={[0.6, 1.6]}
+        wind={[-0.4, 0.8]}
+        rotationSpeed={[-0.6, 0.6]}
+        opacity={[0.65, 1]}
+        enable3DRotation
         style={{ position: "fixed", inset: 0, zIndex: 1 }}
       />
       {/* 1. Global Fixed Premium Navbar */}
