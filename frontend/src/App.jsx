@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { FallingLeaves } from "falling-leaves/react";
+import Snowfall from "react-snowfall";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
 import ModelDetail from "./components/ModelDetail";
@@ -174,7 +174,7 @@ function App() {
       audioRef.current.currentTime = 0;
       setSoundActive(false);
     } else {
-      audioRef.current.volume = 0.4;
+      audioRef.current.volume = 1.0;
       audioRef.current.play()
         .then(() => setSoundActive(true))
         .catch((error) => console.log("Audio error:", error));
@@ -231,14 +231,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#07080a] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black">
-      <FallingLeaves
-        fullScreen
-        count={80}
-        shapes={["maple"]}
-        colors={['#ffd814', '#febd69', '#ffffff']}
-         speed={1.5}
-         wind={0.5}
-        zIndex={1}
+      <Snowfall
+        snowflakeCount={150}
+        color="rgba(255, 255, 255, 0.85)"
+        radius={[4,3.5]}
+        speed={[3,3]}
+        wind={[-2.5, 1]}
+        style={{ position: "fixed", inset: 0, zIndex: 1 }}
       />
       {/* 1. Global Fixed Premium Navbar */}
       <Navbar
