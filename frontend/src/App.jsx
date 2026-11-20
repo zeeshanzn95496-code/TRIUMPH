@@ -174,6 +174,7 @@ function App() {
       audioRef.current.currentTime = 0;
       setSoundActive(false);
     } else {
+      audioRef.current.volume = 0.4;
       audioRef.current.play()
         .then(() => setSoundActive(true))
         .catch((error) => console.log("Audio error:", error));
