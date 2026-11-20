@@ -22,6 +22,7 @@ import {
   Cpu,
   Layers,
   MoveLeft,
+  Fuel,
 } from "lucide-react";
 
 // Single Flagship Model: Triumph Rocket 3 GT
@@ -74,10 +75,10 @@ const FLAGSHIP = {
       icon: Flame,
     },
     {
-      label: "Fuel Economy",
-      value: "~14 kmpl",
-      detail: "Real-World Mixed Riding",
-      icon: Shield,
+      label: "Fuel Tank",
+      value: "18.0 L",
+      detail: "Long-Distance Touring Range",
+      icon: Fuel,
     },
   ],
   pillars: [
