@@ -8,15 +8,17 @@ A premium motorcycle showroom website built with **React + Vite + Tailwind CSS v
 vehicle-showroom/
 ├── frontend/          # React SPA (Vite)
 │   └── src/
-│       ├── App.jsx            # Page router (home / models / model / about) + test-ride modal
+│       ├── App.jsx            # Page router (home / models / model / about / contact) + test-ride modal
 │       ├── Main.jsx           # Entry point, Lenis smooth scroll
 │       └── components/
 │           ├── Navbar.jsx     # Fixed navbar with active-page highlighting
 │           ├── Models.jsx     # Amazon-style product card grid
 │           ├── ModelDetail.jsx# Full model detail page (specs + equipment)
 │           ├── About.jsx      # "Under construction" page
-│           ├── images/        # Bike photos & Triumph logo
-│           └── audio/         # Exhaust sound effect (rocketgt.wav)
+│           ├── Contact.jsx    # Showroom info cards + enquiry form
+│           └── images/        # Bike photos & Triumph logo
+│   └── public/
+│       └── audio/rocketgt.wav  # Exhaust sound (lazy-loaded, not bundled)
 └── backend/           # Express + MongoDB (Mongoose) API — scaffold only
 ```
 
@@ -39,7 +41,7 @@ npm run preview  # preview production build
 - **Tailwind CSS v4** via `@tailwindcss/vite` (no config file needed)
 - **Lenis** — smooth scrolling
 - **GSAP** — installed (currently unused after navbar animation removal)
-- **falling-leaves** — fullscreen leaf particle overlay
+- **react-snowfall** — fullscreen snowfall canvas overlay
 - **lucide-react** — icons
 
 ### Pages (state-based routing in `App.jsx`)
@@ -48,7 +50,8 @@ npm run preview  # preview production build
 |-----------|----------------------------|------------------------------------------|
 | `home`    | Navbar → Home / logo       | Hero (Rocket 3 GT), About, Anatomy specs |
 | `about`   | Navbar → About             | "Under construction" animated page       |
-| `models`  | Navbar → Models            | Product card grid (Speed 400, Scrambler) |
+| `contact` | Navbar → Contact           | Showroom info cards + enquiry form        |
+| `models`  | Navbar → Models            | Product card grid (Speed 400, Scrambler 400X, T4) |
 | `model`   | Click a model card         | Full detail page for that model          |
 | —         | "Book Test Ride" buttons   | Modal form (name, phone, date, dealer)   |
 
@@ -57,7 +60,7 @@ npm run preview  # preview production build
 - `App.jsx` → `FLAGSHIP` object: Rocket 3 GT hero data (colors, specs, pillars, equipment)
 - `Models.jsx` → `MODELS` array: product cards (add new bikes here)
 - `ModelDetail.jsx` → `DETAIL_SPECS`: full spec tables per model id — **add an entry for every new model** or its detail page will be empty
-- Audio: `src/components/audio/rocketgt.wav` toggled by the speaker button on the hero image
+- Audio: `public/audio/rocketgt.wav` served statically (preload="none"), toggled by the speaker button on the hero image
 
 ## Backend
 
