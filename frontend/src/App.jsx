@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Snowfall from "react-snowfall";
 import Navbar from "./components/Navbar";
 import Models from "./components/Models";
@@ -165,6 +165,19 @@ function App() {
   const [page, setPage] = useState("home");
   const [selectedModel, setSelectedModel] = useState(null);
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    const titles = {
+      home: "Triumph Motorcycles",
+      models: "Models — Triumph Motorcycles",
+      model: selectedModel
+        ? selectedModel.name + " — Triumph Motorcycles"
+        : "Model — Triumph Motorcycles",
+      about: "About — Triumph Motorcycles",
+      contact: "Contact — Triumph Motorcycles",
+    };
+    document.title = titles[page] ?? "Triumph Motorcycles";
+  }, [page, selectedModel]);
 
   const toggleExhaustSound = () => {
     if (!audioRef.current) return;
