@@ -293,7 +293,7 @@ function App() {
             {/* Motorcycle Cinematic Showcase */}
             <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/8 bg-[#0d0e13] shadow-[0_25px_60px_rgba(0,0,0,0.9)]">
               {/* Main Visual Image */}
-              <div className="relative h-250px sm:h-380px md:h-[480px] lg:h-[540px] w-full overflow-hidden bg-zinc-950">
+              <div className="relative h-[250px] sm:h-[380px] md:h-[480px] lg:h-[540px] w-full overflow-hidden bg-zinc-950">
                 <img
                   src={currentColor.image}
                   alt={FLAGSHIP.name}
