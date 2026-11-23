@@ -9,7 +9,7 @@ vehicle-showroom/
 ├── frontend/          # React SPA (Vite)
 │   └── src/
 │       ├── App.jsx            # Page router (home / models / model / about / contact) + test-ride modal
-│       ├── Main.jsx           # Entry point, Lenis smooth scroll
+│       ├── Main.jsx           # Entry point
 │       └── components/
 │           ├── Navbar.jsx     # Fixed navbar with active-page highlighting
 │           ├── Models.jsx     # Amazon-style product card grid
@@ -41,7 +41,6 @@ npm run preview  # preview production build
 
 - **React 19** + **Vite 8**
 - **Tailwind CSS v4** via `@tailwindcss/vite` (no config file needed)
-- **Lenis** — smooth scrolling
 - **GSAP** — installed (currently unused after navbar animation removal)
 - **react-snowfall** — fullscreen snowfall canvas overlay
 - **lucide-react** — icons
