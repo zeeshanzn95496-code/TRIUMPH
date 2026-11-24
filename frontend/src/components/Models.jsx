@@ -46,6 +46,20 @@ export const MODELS = [
     tag: "398cc Single • 40 PS • 6-Speed • ABS",
     image: speed400,
   },
+  {
+    id: "thruxton-400",
+    brand: "Triumph Motorcycles",
+    name: "Triumph Thruxton 400 — 2025 Edition",
+    badge: "New",
+    rating: 4.7,
+    reviews: "986",
+    price: ",795",
+    mrp: ",400",
+    discount: "9% off",
+    emi: "EMI from $245/mo",
+    tag: "398cc Single • 40 PS • Bobber • ABS",
+    image: speed400,
+  },
 ];
 
 function Stars({ rating }) {

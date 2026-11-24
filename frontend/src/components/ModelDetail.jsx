@@ -94,6 +94,51 @@ const DETAIL_SPECS = {
       "Stainless steel twin-skin exhaust",
     ],
   },
+  "thruxton-400": {
+    detailedSpecs: [
+      {
+        category: "Engine & Transmission",
+        items: [
+          { label: "Type", val: "Liquid-cooled, 4-valve, DOHC single-cylinder" },
+          { label: "Capacity", val: "398.15 cc" },
+          { label: "Bore x Stroke", val: "89.0 mm x 64.0 mm" },
+          { label: "Compression", val: "12:1" },
+          { label: "Fuel System", val: "Bosch EFI with ride-by-wire throttle" },
+          { label: "Exhaust", val: "Stainless twin-skin header with steel silencer" },
+          { label: "Final Drive", val: "X-ring chain" },
+          { label: "Clutch", val: "Wet, multi-plate, slip & assist" },
+          { label: "Gearbox", val: "6-speed" },
+        ],
+      },
+      {
+        category: "Chassis & Dimensions",
+        items: [
+          { label: "Frame", val: "Hybrid spine/perimeter tubular steel" },
+          { label: "Front Wheel", val: "Cast aluminium 19 x 2.5 in" },
+          { label: "Rear Wheel", val: "Cast aluminium 17 x 3.5 in" },
+          { label: "Front Suspension", val: "43mm upside-down Big Piston forks, 130mm travel" },
+          { label: "Rear Suspension", val: "Gas monoshock RSU, preload adjustable, 120mm travel" },
+          { label: "Front Brakes", val: "310mm fixed disc, 4-piston radial caliper, ABS" },
+          { label: "Rear Brakes", val: "230mm fixed disc, floating caliper, ABS" },
+          { label: "Seat Height", val: "770 mm" },
+          { label: "Wheelbase", val: "1,377 mm" },
+          { label: "Fuel Capacity", val: "13 Litres" },
+          { label: "Wet Weight", val: "170 kg" },
+        ],
+      },
+    ],
+    equipment: [
+      "Analogue speedometer with integrated multi-function LCD screen",
+      "Switchable traction control",
+      "Ride-by-wire electronic throttle",
+      "Wet multi-plate slip & assist clutch",
+      "Dual-channel ABS with 310mm front disc",
+      "Bobber styling with solo floating seat and low swept-back bars",
+      "19-inch front / 17-inch cast alloy wheels",
+      "LED headlamp with signature daytime running light",
+      "Stainless steel twin-skin exhaust",
+    ],
+  },
   "t4": {
     detailedSpecs: [
       {
