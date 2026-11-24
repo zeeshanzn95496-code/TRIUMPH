@@ -41,7 +41,6 @@ npm run preview  # preview production build
 
 - **React 19** + **Vite 8**
 - **Tailwind CSS v4** via `@tailwindcss/vite` (no config file needed)
-- **GSAP** — installed (currently unused after navbar animation removal)
 - **react-snowfall** — fullscreen snowfall canvas overlay
 - **lucide-react** — icons
 
