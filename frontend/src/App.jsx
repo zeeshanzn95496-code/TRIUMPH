@@ -5,6 +5,7 @@ import Models from "./components/Models";
 import ModelDetail from "./components/ModelDetail";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import rocket3gt from "./components/images/rocket3gt.jpg";
 import rocket3gtblack from "./components/images/rocket3gtblack.avif";
 import rocket3gtsilver from "./components/images/rocket3gtsilver.jpg";
@@ -569,14 +570,7 @@ function App() {
         />
       )}
 
-      {(page === "home" || page === "contact") && (
-        <footer className="border-t border-white/6 py-6 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] tracking-[0.14em] uppercase text-zinc-500">
-            <span>© {new Date().getFullYear()} Triumph Motorcycles</span>
-            <span>Crafted with passion • All rights reserved</span>
-          </div>
-        </footer>
-      )}
+      {(page === "home" || page === "contact") && <Footer />}
       </div>
 
       {/* 6. VIP Test Ride Booking Modal */} 

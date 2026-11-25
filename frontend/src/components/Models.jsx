@@ -53,7 +53,7 @@ export const MODELS = [
     badge: "New",
     rating: 4.7,
     reviews: "986",
-    price: ",795",
+    price: "6,795",
     mrp: ",400",
     discount: "9% off",
     emi: "EMI from $245/mo",
