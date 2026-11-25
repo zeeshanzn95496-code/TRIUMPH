@@ -2,6 +2,7 @@ import { Star, StarHalf, Truck, BadgeCheck, ChevronRight, ArrowLeft, Bike } from
 import "./Models.css";
 import scramblerImg from"./images/scrambler.jpg";
 import speed400 from"./images/speed400.webp"
+import Footer from "./Footer";
 
 export const MODELS = [
   {
@@ -150,6 +151,7 @@ function ProductCard({ model, onTestRide, onSelect }) {
 
 function Models({ onTestRide, onSelect, onBack }) {
   return (
+    <>
     <section className="models-section" id="models">
       {onBack && (
         <div className="models-section__topbar">
@@ -176,6 +178,8 @@ function Models({ onTestRide, onSelect, onBack }) {
         ))}
       </div>
     </section>
+    <Footer />
+    </>
   );
 }
 

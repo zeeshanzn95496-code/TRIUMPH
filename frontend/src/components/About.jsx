@@ -1,4 +1,5 @@
 import "./About.css";
+import Footer from "./Footer";
 
 function About() {
   return (
@@ -22,6 +23,7 @@ function About() {
 
         <p className="about-page__note">Check back shortly</p>
       </div>
+      <Footer />
     </section>
   );
 }
