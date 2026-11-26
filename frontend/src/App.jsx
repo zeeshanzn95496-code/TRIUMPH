@@ -258,6 +258,13 @@ function App() {
         onOpenTestRide={() => setIsTestRideModalOpen(true)}
         onNavigate={navigate}
         currentPage={page}
+        modelName={
+          selectedModel
+            ? selectedModel.name
+                .replace(/^Triumph\s+/i, '')
+                .replace(/\s*—.*$/, '')
+            : null
+        }
       />
 
       <div key={page} className="page-fade">

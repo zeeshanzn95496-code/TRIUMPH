@@ -28,7 +28,7 @@ function TriumphLogo() {
 const linkClass =
   "text-[12px] font-bold tracking-[0.22em] uppercase text-zinc-300 hover:text-white transition-colors duration-200 relative py-1 group cursor-pointer bg-transparent border-0";
 
-function Navbar({ onOpenTestRide, onNavigate, currentPage = "home" }) {
+function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -108,6 +108,11 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home" }) {
           </button>
           <button onClick={() => handleNav("models")} className={navLinkClass("models")}>
             Models
+            {currentPage === "model" && modelName && (
+              <span className="ml-2 text-[10px] font-semibold tracking-[0.14em] uppercase text-zinc-500">
+                / {modelName}
+              </span>
+            )}
             <span className={underlineClass("models")} />
           </button>
           <button onClick={() => handleNav("contact")} className={navLinkClass("contact")}>
