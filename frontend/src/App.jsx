@@ -273,7 +273,7 @@ function App() {
           {/* 2. Hero Section - Single Model Showcase */}
           <section
             id="home"
-            className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
+            className="relative pt-34 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 mt-6 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
           >
             {/* Subtle Ambient Radial Lighting */}
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] md:w-[900px] h-[300px] sm:h-[450px] bg-red-600/4 sm:bg-white/3 rounded-full blur-[100px] sm:blur-[160px] pointer-events-none" />
@@ -285,7 +285,7 @@ function App() {
 
             {/* Title Header */}
             <div className="mb-4 sm:mb-4 text-center">
-              <h2 className=" mb-2 text-4xl sm:text-4xl md:text-3xl lg:text-3xl font-light tracking-tight uppercase leading-none text-white">
+              <h2 className=" mb-2 mt-5 text-4xl sm:text-4xl md:text-3xl lg:text-3xl font-light tracking-tight uppercase leading-none text-white">
                 LARGEST IN THE WORLD{'    '}
                 <span className=" ml-3 text-zinc-400 font-light">2500</span>
               </h2>

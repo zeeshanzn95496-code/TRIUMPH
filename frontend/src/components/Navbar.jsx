@@ -79,7 +79,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
+      className={` top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         isScrolled
@@ -144,7 +144,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0c0d12]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-6 transition-all duration-300 animate-in slide-in-from-top-4">
+        <div className="md:hidden bg-white backdrop-blur-2xl border-b border-gray-400/10 px-6 py-6 transition-all duration-300 animate-in slide-in-from-top-4">
           <div className="flex flex-col space-y-4">
             <button onClick={() => handleNav("home")} className={mobileLinkClass("home")}>
               Home
