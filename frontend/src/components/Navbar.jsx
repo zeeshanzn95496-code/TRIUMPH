@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import "./Navbar.css";
 import logo from "./images/triumph-motorcycles-seeklogo.png";
@@ -55,7 +56,11 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
   useEffect(() => {
     document.body.classList.toggle("nav-menu-open", mobileMenuOpen);
-    return () => document.body.classList.remove("nav-menu-open");
+    document.documentElement.classList.toggle("nav-menu-open", mobileMenuOpen);
+    return () => {
+      document.body.classList.remove("nav-menu-open");
+      document.documentElement.classList.remove("nav-menu-open");
+    };
   }, [mobileMenuOpen]);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -149,7 +154,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
       </div>
 
       {/* Mobile Menu Dropdown Drawer */}
-      {mobileMenuOpen && (
+      {mobileMenuOpen && createPortal(
         <div className="md:hidden mobile-menu">
           <div className="flex flex-col space-y-4">
             <button onClick={() => handleNav("home")} className={mobileLinkClass("home")}>
@@ -189,7 +194,8 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
               </span>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </nav>
   );

@@ -28,8 +28,8 @@
 }
 /* Mobile dropdown menu */
 .mobile-menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 5rem;
   left: 0;
   right: 0;
   z-index: 70;
@@ -57,6 +57,7 @@
 }
 
 /* Blur page content & lock scroll while mobile menu is open */
+html.nav-menu-open,
 body.nav-menu-open {
   overflow: hidden;
 }
