@@ -144,7 +144,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 z-40 bg-white border-b border-black/10 px-6 py-6 transition-all duration-300 animate-in slide-in-from-top-4 shadow-2xl max-h-[75vh] overflow-y-auto overscroll-contain">
+        <div className="md:hidden mobile-menu">
           <div className="flex flex-col space-y-4">
             <button onClick={() => handleNav("home")} className={mobileLinkClass("home")}>
               Home
