@@ -73,8 +73,8 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
     }`;
 
   const mobileLinkClass = (dest) =>
-    `text-sm font-bold tracking-[0.2em] uppercase py-2 border-b border-white/6 text-left bg-transparent border-x-0 border-t-0 cursor-pointer ${
-      isActive(dest) ? "text-white" : "text-zinc-200 hover:text-white"
+    `text-sm font-bold tracking-[0.2em] uppercase py-2 border-b border-black/10 text-left bg-transparent border-x-0 border-t-0 cursor-pointer ${
+      isActive(dest) ? "text-black" : "text-zinc-600 hover:text-black"
     }`;
 
   return (
@@ -144,7 +144,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white backdrop-blur-2xl border-b border-gray-400/10 px-6 py-6 transition-all duration-300 animate-in slide-in-from-top-4">
+        <div className="md:hidden bg-white border-b border-black/10 px-6 py-6 transition-all duration-300 animate-in z-50 slide-in-from-top-4 shadow-2xl">
           <div className="flex flex-col space-y-4">
             <button onClick={() => handleNav("home")} className={mobileLinkClass("home")}>
               Home
@@ -165,14 +165,14 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
                   closeMobileMenu();
                   if (onOpenTestRide) onOpenTestRide();
                 }}
-                className="w-full py-3 rounded-full bg-white text-black font-extrabold text-xs tracking-[0.16em] uppercase flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                className="w-full py-3 rounded-full bg-black text-white font-extrabold text-xs tracking-[0.16em] uppercase flex items-center justify-center gap-2 cursor-pointer shadow-lg"
               >
                 <span>Book Test Ride</span>
                 <ArrowUpRight size={15} />
               </button>
             </div>
 
-            <div className="pt-4 mt-2 border-t border-white/8 flex items-center justify-between text-xs text-zinc-400">
+            <div className="pt-4 mt-2 border-t border-black/10 flex items-center justify-between text-xs text-zinc-500">
               <span className="flex items-center gap-1.5">
                 <Phone size={13} className="text-zinc-300" />
                 1-800-555-TRIUMPH
