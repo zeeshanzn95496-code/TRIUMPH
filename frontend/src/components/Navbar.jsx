@@ -79,7 +79,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
   return (
     <nav
-      className={` top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
+      className={` top-0 left-0 right-0 z-40 h-20 transition-all duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         isScrolled
@@ -97,7 +97,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
         </button>
 
         {/* Center: Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-11">
+        <div className="hidden z-40 md:flex items-center gap-8 lg:gap-11">
           <button onClick={() => handleNav("home")} className={navLinkClass("home")}>
             Home
             <span className={underlineClass("home")} />
@@ -144,7 +144,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-black/10 px-6 py-6 transition-all duration-300 animate-in z-50 slide-in-from-top-4 shadow-2xl">
+        <div className="md:hidden absolute top-full left-0 right-0 z-40 bg-white border-b border-black/10 px-6 py-6 transition-all duration-300 animate-in slide-in-from-top-4 shadow-2xl max-h-[75vh] overflow-y-auto overscroll-contain">
           <div className="flex flex-col space-y-4">
             <button onClick={() => handleNav("home")} className={mobileLinkClass("home")}>
               Home
