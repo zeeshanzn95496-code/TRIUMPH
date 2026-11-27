@@ -36,6 +36,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
 
   useEffect(() => {
     const handleScroll = () => {
+      if (mobileMenuOpen) return;
       const y = window.scrollY;
       setIsScrolled(y > 20);
 
@@ -50,7 +51,7 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [mobileMenuOpen]);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
