@@ -33,7 +33,9 @@
   left: 0;
   right: 0;
   z-index: 70;
-  background: whitesmoke;
+  background: rgba(245, 245, 245, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -57,6 +59,10 @@
 /* Blur page content & lock scroll while mobile menu is open */
 body.nav-menu-open {
   overflow: hidden;
+}
+
+body.nav-menu-open canvas {
+  filter: blur(6px);
 }
 
 body.nav-menu-open .page-fade {
