@@ -71,6 +71,7 @@
   background: #09090b;
 }
 
+
 @media (min-width: 640px) {
   .model-detail__image {
     min-height: 22rem;
@@ -353,4 +354,11 @@
 .model-detail__equipment-item svg {
   color: #ffffff;
   flex-shrink: 0;
+}
+
+.model-detail__footer > div {
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

@@ -1,5 +1,6 @@
 import { ArrowLeft, Star, StarHalf, Truck, BadgeCheck, ChevronRight, CheckCircle2 } from "lucide-react";
 import "./ModelDetail.css";
+import Footer from "./Footer";
 
 const DETAIL_SPECS = {
   "speed-400": {
@@ -301,6 +302,7 @@ function ModelDetail({ model, onBack, onTestRide }) {
           to learn more.
         </p>
       )}
+      <Footer className="model-detail__footer" />
     </div>
   );
 }
