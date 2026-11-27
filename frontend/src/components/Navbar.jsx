@@ -53,6 +53,11 @@ function Navbar({ onOpenTestRide, onNavigate, currentPage = "home", modelName })
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    document.body.classList.toggle("nav-menu-open", mobileMenuOpen);
+    return () => document.body.classList.remove("nav-menu-open");
+  }, [mobileMenuOpen]);
+
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const handleNav = (dest) => {

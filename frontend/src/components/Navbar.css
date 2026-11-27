@@ -53,3 +53,14 @@
     transform: translateY(0);
   }
 }
+
+/* Blur page content & lock scroll while mobile menu is open */
+body.nav-menu-open {
+  overflow: hidden;
+}
+
+body.nav-menu-open .page-fade {
+  filter: blur(8px);
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
