@@ -140,6 +140,51 @@ const DETAIL_SPECS = {
       "Stainless steel twin-skin exhaust",
     ],
   },
+  "bonneville-t40": {
+    detailedSpecs: [
+      {
+        category: "Engine & Transmission",
+        items: [
+          { label: "Type", val: "Liquid-cooled, 4-valve, DOHC single-cylinder" },
+          { label: "Capacity", val: "398.15 cc" },
+          { label: "Bore x Stroke", val: "89.0 mm x 64.0 mm" },
+          { label: "Compression", val: "12:1" },
+          { label: "Fuel System", val: "Bosch EFI with ride-by-wire throttle" },
+          { label: "Exhaust", val: "Stainless twin-skin header with steel silencer" },
+          { label: "Final Drive", val: "X-ring chain" },
+          { label: "Clutch", val: "Wet, multi-plate, slip & assist" },
+          { label: "Gearbox", val: "6-speed" },
+        ],
+      },
+      {
+        category: "Chassis & Dimensions",
+        items: [
+          { label: "Frame", val: "Hybrid spine/perimeter tubular steel" },
+          { label: "Front Wheel", val: "Cast aluminium 18 x 2.5 in" },
+          { label: "Rear Wheel", val: "Cast aluminium 17 x 4 in" },
+          { label: "Front Suspension", val: "41mm conventional forks, 120mm travel" },
+          { label: "Rear Suspension", val: "Gas monoshock RSU, preload adjustable, 120mm travel" },
+          { label: "Front Brakes", val: "310mm fixed disc, 2-piston caliper, ABS" },
+          { label: "Rear Brakes", val: "230mm fixed disc, floating caliper, ABS" },
+          { label: "Seat Height", val: "790 mm" },
+          { label: "Wheelbase", val: "1,395 mm" },
+          { label: "Fuel Capacity", val: "14.5 Litres" },
+          { label: "Wet Weight", val: "170 kg" },
+        ],
+      },
+    ],
+    equipment: [
+      "Analogue speedometer with integrated multi-function LCD screen",
+      "Switchable traction control",
+      "Ride-by-wire electronic throttle",
+      "Wet multi-plate slip & assist clutch",
+      "Dual-channel ABS with 310mm front disc",
+      "Classic Bonneville styling with solo bench seat and chrome accents",
+      "18-inch front / 17-inch cast alloy wheels",
+      "LED headlamp with signature daytime running light",
+      "Stainless steel twin-skin exhaust with reverse-cone silencer",
+    ],
+  },
   "t4": {
     detailedSpecs: [
       {

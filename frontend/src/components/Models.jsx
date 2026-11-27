@@ -61,6 +61,20 @@ export const MODELS = [
     tag: "398cc Single • 40 PS • Bobber • ABS",
     image: speed400,
   },
+  {
+    id: "bonneville-t40",
+    brand: "Triumph Motorcycles",
+    name: "Triumph Bonneville T40 — 2025 Edition",
+    badge: "New",
+    rating: 4.7,
+    reviews: "1,120",
+    price: ",795",
+    mrp: ",400",
+    discount: "9% off",
+    emi: "EMI from $245/mo",
+    tag: "398cc Single • 40 PS • Classic Roadster • ABS",
+    image: speed400,
+  },
 ];
 
 function Stars({ rating }) {
