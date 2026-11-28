@@ -2,6 +2,9 @@ import { Star, StarHalf, Truck, BadgeCheck, ChevronRight, ArrowLeft, Bike } from
 import "./Models.css";
 import scramblerImg from"./images/scrambler.jpg";
 import speed400 from"./images/speed400.webp"
+import T40 from "./images/Triumph_Bonneville_T40.jpeg"
+import Thruxton from "./images/thruxton400.avif"
+import T4 from "./images/t4.jpg"
 import Footer from "./Footer";
 
 export const MODELS = [
@@ -37,15 +40,15 @@ export const MODELS = [
     id: "t4",
     brand: "Triumph Motorcycles",
     name: "Triumph T4",
-    badge: "New",
+    badge: "starting",
     rating: 4.6,
     reviews: "1,204",
-    price: "$4,795",
+    price: "$3,895",
     mrp: "$5,500",
     discount: "13% off",
     emi: "EMI from $199/mo",
     tag: "398cc Single • 40 PS • 6-Speed • ABS",
-    image: speed400,
+    image: T4,
   },
   {
     id: "thruxton-400",
@@ -54,26 +57,26 @@ export const MODELS = [
     badge: "New",
     rating: 4.7,
     reviews: "986",
-    price: "6,795",
-    mrp: ",400",
+    price: "7,775",
+    mrp: "8,400",
     discount: "9% off",
     emi: "EMI from $245/mo",
     tag: "398cc Single • 40 PS • Bobber • ABS",
-    image: speed400,
+    image: Thruxton,
   },
   {
-    id: "bonneville-t40",
+    id: "Bonneville-t40",
     brand: "Triumph Motorcycles",
     name: "Triumph Bonneville T40 — 2025 Edition",
-    badge: "New",
+    badge: "Newly launched",
     rating: 4.7,
     reviews: "1,120",
-    price: ",795",
-    mrp: ",400",
+    price: "6,795",
+    mrp: "7,400",
     discount: "9% off",
     emi: "EMI from $245/mo",
     tag: "398cc Single • 40 PS • Classic Roadster • ABS",
-    image: speed400,
+    image: T40,
   },
 ];
 
